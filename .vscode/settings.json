@@ -51,11 +51,13 @@
     "regex": "cpp",
     "locale": "cpp",
     "xlocbuf": "cpp",
-    "xlocmes": "cpp"
+    "xlocmes": "cpp",
+    "set": "cpp"
   },
   "cSpell.ignoreWords": [
     "arabe",
     "codigo",
+    "descricao",
     "espanhol",
     "mandarim",
     "muito",

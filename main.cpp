@@ -24,18 +24,28 @@ void display_cities()
 
 int main()
 {
-     Data newDate8{"15/Ago/2022"};
-     Data newDate9{"28/Set/2022"};
-     Data newDate6{"12/Jun/2022"};
-     Data newDate7{"15/Jul/2022"};
-     Data newDate2{"29/Fev/2020"};
-     Data newDate3{"12/Mar/2022"};
-     Data newDate4{"12/Abr/2022"};
-     Data newDate5{"12/Mai/2022"};
-     Data newDate1{"12/Jan/2022"};
-     Data newDate10{"15/Out/2022"};
-     Data newDate11{"28/Nov/2022"};
-     Data newDate12{"28/Dez/2022"};
+     Nome newName{"Lucas Breno Braga De Souza"};
+     Titulo newTitle1{"Eis aqui um titulo"};
+     Titulo newTitle2{"Eis aqui um titulo invalido"};
+     Senha newPassword1{"124ASs"};
+     Senha newPassword3{"Qw3rT1"};
+     Senha newPassword2{"1azsAS"};
+     // Email newEmail{"012345678901234567890123456789012345678901234567890123456789012@test.com"};
+     // Email newEmail2{"01234567890123456789012345678901234567890123456789012345678901212@test.com"};
+     // Email newEmail3{"lucas@testcom"};
+     // Email newEmail4{"12.1987.@test.com"};
+     // Data newDate8{"15/Ago/2022"};
+     // Data newDate9{"28/Set/2022"};
+     // Data newDate6{"12/Jun/2022"};
+     // Data newDate7{"15/Jul/2022"};
+     // Data newDate2{"29/Fev/2020"};
+     // Data newDate3{"12/Mar/2022"};
+     // Data newDate4{"12/Abr/2022"};
+     // Data newDate5{"12/Mai/2022"};
+     // Data newDate1{"12/Jan/2022"};
+     // Data newDate10{"15/Out/2022"};
+     // Data newDate11{"28/Nov/2022"};
+     // Data newDate12{"28/Dez/2022"};
 
      // Cidade hongKong{"Hong Kong"}, bangkok{"Bangkok"}, macau{"Macau"}, singapura{"Singapura"}, londres{"Londres"}, paris{"Paris"}, dubai{"Dubai"}, delhi{"Delhi"}, istambul{"Istambul"}, kuala{"Kuala"}, lumpur{"Lumpur"}, novaIorque{"Nova Iorque"}, antalya{"Antalya"}, mumbai{"Mumbai"}, shenzen{"Shenzen"}, phuket{"Phuket"};
      // display_cities();

@@ -1,5 +1,5 @@
 #include "dominios.h"
-
+#include <set>
 #include <iostream>
 #include <string>
 #include <stdio.h>
@@ -28,17 +28,17 @@ Cidade::~Cidade() {}
 
 // Defini��es de m�todos da classe Senha.
 
-void Senha::validar(int valor) //throw(invalid_argument)
-{
-    if (valor == SENHA_INVALIDA)
-        throw std::invalid_argument("Erro parametro.");
-}
+// void Senha::validar(int valor) //throw(invalid_argument)
+// {
+//     if (valor == SENHA_INVALIDA)
+//         throw std::invalid_argument("Erro parametro.");
+// }
 
-void Senha::setValor(int valor) //throw(invalid_argument)
-{
-    validar(valor);
-    this->valor = valor;
-}
+// void Senha::setValor(int valor) //throw(invalid_argument)
+// {
+//     validar(valor);
+//     this->valor = valor;
+// }
 
 // Defini��es de m�todos da classe C&oacute;digo.
 
@@ -209,3 +209,158 @@ Data::Data(std::string data) : data{data}
     validar(data);
 }
 Data::~Data() {}
+
+// Defini��es de m�todos da classe Email.
+
+void Email::validar(std::string email_address)
+{
+    std::regex str_expr("^((?!\\.)(?!.*?\\.\\.)[a-z0-9.!#$%&'*+-\\/=?^_`{|}]{1,64})@((?!\\.)(?!.*?\\.\\.)[a-z0-9.\\-{1,5}]{1,253})$");
+    if (!regex_match(email_address, str_expr))
+    {
+        std::cout << email_address << " is not a valid email address" << std::endl;
+        throw std::invalid_argument("Informe um email valido");
+    }
+};
+
+void Email::setEmail(std::string email_address)
+{
+    this->email_address = email_address;
+};
+Email::Email(std::string email_address) : email_address{email_address}
+{
+    validar(email_address);
+};
+Email::~Email(){};
+
+// Defini��es de m�todos da classe Endereco.
+
+void Endereco::validar(std::string endereco)
+{
+    std::regex str_expr("^(?:(?!.*[ ]{2})(?!.*[\\.]{2})(?:.{0,20}$))$");
+    if (!regex_match(endereco, str_expr))
+    {
+        std::cout << endereco << " is not a valid address" << std::endl;
+        throw std::invalid_argument("Informe um endereco valido");
+    }
+};
+
+void Endereco::setEndereco(std::string endereco)
+{
+    this->endereco = endereco;
+};
+Endereco::Endereco(std::string endereco) : endereco{endereco}
+{
+    validar(endereco);
+};
+Endereco::~Endereco(){};
+
+// Defini��es de m�todos da classe Descricao.
+
+void Descricao::validar(std::string descricao)
+{
+    std::regex str_expr("^(?:(?!.*[ ]{2})(?!.*[\\.]{2})(?:.{0,30}$))$");
+    if (!regex_match(descricao, str_expr))
+    {
+        std::cout << descricao << " is not a valid address" << std::endl;
+        throw std::invalid_argument("Informe um descricao valido");
+    }
+};
+
+void Descricao::setDescricao(std::string descricao)
+{
+    this->descricao = descricao;
+};
+Descricao::Descricao(std::string descricao) : descricao{descricao}
+{
+    validar(descricao);
+};
+Descricao::~Descricao(){};
+
+// Defini��es de m�todos da classe Senha.
+
+void uniqueCharacters(std::string str)
+{
+    std::set<char> char_set;
+
+    for (char c : str)
+    {
+        char_set.insert(c);
+    }
+    if (char_set.size() == str.size())
+    {
+        std::cout << "It is a valid password" << std::endl;
+    }
+    else
+    {
+        throw std::invalid_argument("Informe uma senha valida");
+    }
+}
+void Senha::validar(std::string senha)
+{
+    std::regex str_expr("(?=^.{6,6}$)((?=.*\\d))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$");
+    if (!regex_match(senha, str_expr))
+    {
+        throw std::invalid_argument(senha + "Informe um senha valido");
+    }
+    uniqueCharacters(senha);
+};
+
+void Senha::setSenha(std::string senha)
+{
+    this->senha = senha;
+};
+
+Senha::Senha(std::string senha) : senha{senha}
+{
+    validar(senha);
+};
+
+Senha::~Senha(){};
+
+// Defini��es de m�todos da classe Titulo.
+
+void Titulo::validar(std::string titulo)
+{
+    std::regex str_expr("^(?:(?!.*[ ]{2})(?!.*[\\.]{2})(?=^.{5,20}$)(?=.*[A-Z])(?=.*[a-z]).*)$");
+    if (!regex_match(titulo, str_expr))
+    {
+        std::cout << titulo << " is not a valid title" << std::endl;
+        throw std::invalid_argument("Informe um titulo valido");
+    }
+};
+
+void Titulo::setTitulo(std::string titulo)
+{
+    this->titulo = titulo;
+};
+
+Titulo::Titulo(std::string titulo) : titulo{titulo}
+{
+    validar(titulo);
+};
+
+Titulo::~Titulo(){};
+
+// Defini��es de m�todos da classe Nome.
+
+void Nome::validar(std::string nome)
+{
+    std::regex str_expr("[A-Z][a-z]+([ ][A-Z][a-z]+)*");
+    if (!regex_match(nome, str_expr))
+    {
+        std::cout << nome << " is not a valid title" << std::endl;
+        throw std::invalid_argument("Informe um nome valido");
+    }
+};
+
+void Nome::setNome(std::string nome)
+{
+    this->nome = nome;
+};
+
+Nome::Nome(std::string nome) : nome{nome}
+{
+    validar(nome);
+};
+
+Nome::~Nome(){};

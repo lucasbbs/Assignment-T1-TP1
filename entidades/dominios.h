@@ -4,27 +4,6 @@
 #include <stdexcept>
 #include <vector>
 
-// Declara��o da classe Codigo.
-
-// Declara��o da classe Senha.
-
-class Senha
-{
-
-private:
-    int valor;
-    void validar(int); //throw(invalid_argument);
-
-public:
-    const static int SENHA_INVALIDA = 12345;
-
-    void setValor(int); // trow(invalid_argument);
-
-    int getValor() const
-    {
-        return valor;
-    }
-};
 // Declara��o da classe Cidade.
 
 class Cidade
@@ -42,6 +21,7 @@ public:
     ~Cidade();
 };
 
+// Declara��o da classe Codigo.
 class Codigo
 {
 private:
@@ -73,9 +53,99 @@ private:
     static std::string nomes_meses[12];
 
 public:
-    void setData(std::string data);
+    void setData(std::string);
     inline std::string getData() { return data; }
-    Data(std::string data);
+    Data(std::string);
     ~Data();
 };
+
+// Declara��o da classe Email.
+
+class Email
+{
+private:
+    std::string email_address;
+    void validar(std::string);
+
+public:
+    void setEmail(std::string);
+    inline std::string getEmail() { return email_address; }
+    Email(std::string);
+    ~Email();
+};
+
+// Declara��o da classe Endereco.
+
+class Endereco
+{
+private:
+    std::string endereco;
+    void validar(std::string);
+
+public:
+    void setEndereco(std::string);
+    inline std::string getEndereco() { return endereco; }
+    Endereco(std::string);
+    ~Endereco();
+};
+
+// Declara��o da classe Descricao.
+
+class Descricao
+{
+private:
+    std::string descricao;
+    void validar(std::string);
+
+public:
+    void setDescricao(std::string);
+    inline std::string getDescricao() { return descricao; }
+    Descricao(std::string);
+    ~Descricao();
+};
+
+// Declara��o da classe Senha.
+
+class Senha
+{
+private:
+    std::string senha;
+    void validar(std::string);
+
+public:
+    void setSenha(std::string);
+    inline std::string getSenha() { return senha; }
+    Senha(std::string);
+    ~Senha();
+};
+
+// Declara��o da classe Titulo.
+
+class Titulo
+{
+private:
+    std::string titulo;
+    void validar(std::string);
+
+public:
+    void setTitulo(std::string);
+    inline std::string getTitulo() { return titulo; }
+    Titulo(std::string);
+    ~Titulo();
+};
+
+// Declara��o da classe Nome.
+class Nome
+{
+private:
+    std::string nome;
+    void validar(std::string);
+
+public:
+    void setNome(std::string);
+    inline std::string getNome() { return nome; }
+    Nome(std::string);
+    ~Nome();
+};
+
 #endif //_DATA_H_
