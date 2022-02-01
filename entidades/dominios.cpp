@@ -345,11 +345,15 @@ Titulo::~Titulo(){};
 
 void Nome::validar(std::string nome)
 {
-    std::regex str_expr("[A-Z][a-z]+([ ][A-Z][a-z]+)*");
+    std::regex str_expr("(?=^.{5,20}$)^(?:\\s?[A-Z](?:(?:\\.)|(?:[a-z]+?)))+?$");
     if (!regex_match(nome, str_expr))
     {
-        std::cout << nome << " is not a valid title" << std::endl;
+        std::cout << nome << " is not a valid name" << std::endl;
         throw std::invalid_argument("Informe um nome valido");
+    }
+    else
+    {
+        std::cout << nome << std::endl;
     }
 };
 
@@ -364,3 +368,59 @@ Nome::Nome(std::string nome) : nome{nome}
 };
 
 Nome::~Nome(){};
+
+// Defini��es de m�todos da classe Horario.
+
+void Horario::validar(std::string horario)
+{
+    std::regex str_expr("^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$");
+    if (!regex_match(horario, str_expr))
+    {
+        std::cout << horario << " is not a valid time" << std::endl;
+        throw std::invalid_argument("Informe um horário valido");
+    }
+    else
+    {
+        std::cout << horario << std::endl;
+    }
+};
+
+void Horario::setHorario(std::string horario)
+{
+    this->horario = horario;
+};
+
+Horario::Horario(std::string horario) : horario{horario}
+{
+    validar(horario);
+};
+
+Horario::~Horario(){};
+
+// Defini��es de m�todos da classe Nota.
+
+void Nota::validar(std::string nota)
+{
+    std::regex str_expr("^[0-5]$");
+    if (!regex_match(nota, str_expr))
+    {
+        std::cout << nota << " is not a valid time" << std::endl;
+        throw std::invalid_argument("Informe um horário valido");
+    }
+    else
+    {
+        std::cout << nota << std::endl;
+    }
+};
+
+void Nota::setNota(std::string nota)
+{
+    this->nota = nota;
+};
+
+Nota::Nota(std::string nota) : nota{nota}
+{
+    validar(nota);
+};
+
+Nota::~Nota(){};

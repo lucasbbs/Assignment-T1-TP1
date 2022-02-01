@@ -148,4 +148,34 @@ public:
     ~Nome();
 };
 
+// Declara��o da classe Horario.
+
+class Horario
+{
+private:
+    std::string horario;
+    void validar(std::string);
+
+public:
+    void setHorario(std::string);
+    inline std::string getHorario() { return horario; }
+    Horario(std::string);
+    ~Horario();
+};
+
+// Declara��o da classe Nota.
+
+class Nota
+{
+private:
+    std::string nota;
+    void validar(std::string);
+
+public:
+    void setNota(std::string);
+    inline std::string getNota() { return nota; }
+    Nota(std::string);
+    ~Nota();
+};
+
 #endif //_DATA_H_

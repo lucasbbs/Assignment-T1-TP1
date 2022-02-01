@@ -24,9 +24,18 @@ void display_cities()
 
 int main()
 {
-     Nome newName{"Lucas Breno Braga De Souza"};
+     Nota newMark1{"5"};
+     Nota newMark2{"0"};
+     Horario newTime1{"08:45"};
+     Horario newTime2{"17:45"};
+     Horario newTime3{"23:45"};
+     Horario newTime4{"22:45"};
+     Horario newTime5{"00:00"};
+     Nome newName2{"John D. Doe Doe D."};
+     Nome newName1{"John D. Doe Doe Doe"};
+     Nome newName3{"J. D. D. D. D. Doe"};
      Titulo newTitle1{"Eis aqui um titulo"};
-     Titulo newTitle2{"Eis aqui um titulo invalido"};
+     Titulo newTitle2{"Eis aqui um titulo"};
      Senha newPassword1{"124ASs"};
      Senha newPassword3{"Qw3rT1"};
      Senha newPassword2{"1azsAS"};

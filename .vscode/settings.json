@@ -52,7 +52,8 @@
     "locale": "cpp",
     "xlocbuf": "cpp",
     "xlocmes": "cpp",
-    "set": "cpp"
+    "set": "cpp",
+    "xtree": "cpp"
   },
   "cSpell.ignoreWords": [
     "arabe",
