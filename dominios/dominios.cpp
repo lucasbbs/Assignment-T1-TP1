@@ -26,20 +26,6 @@ Cidade::Cidade(std::string nome) : nome{nome} { this->cidades.push_back(this->no
 std::vector<std::string> Cidade::getCidades() { return cidades; }
 Cidade::~Cidade() {}
 
-// Defini��es de m�todos da classe Senha.
-
-// void Senha::validar(int valor) //throw(invalid_argument)
-// {
-//     if (valor == SENHA_INVALIDA)
-//         throw std::invalid_argument("Erro parametro.");
-// }
-
-// void Senha::setValor(int valor) //throw(invalid_argument)
-// {
-//     validar(valor);
-//     this->valor = valor;
-// }
-
 // Defini��es de m�todos da classe C&oacute;digo.
 
 int Codigo::contador{0};
@@ -300,7 +286,7 @@ void Senha::validar(std::string senha)
     std::regex str_expr("(?=^.{6,6}$)((?=.*\\d))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$");
     if (!regex_match(senha, str_expr))
     {
-        throw std::invalid_argument(senha + "Informe um senha valido");
+        throw std::invalid_argument(senha + " informe uma senha valida");
     }
     uniqueCharacters(senha);
 };

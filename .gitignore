@@ -1,3 +1,10 @@
 /stackoverflow
+/stackoverflow/*/
+/stackoverflow/*/*.*
 
+/module_user
+/module_rating
+/module_session
+/module_user
 *.exe
+main2.cpp
