@@ -200,7 +200,7 @@ Data::~Data() {}
 
 void Email::validar(std::string email_address)
 {
-    std::regex str_expr("^((?!\\.)(?!.*?\\.\\.)[a-z0-9.!#$%&'*+-\\/=?^_`{|}]{1,64})@((?!\\.)(?!.*?\\.\\.)[a-z0-9.\\-{1,5}]{1,253})$");
+    std::regex str_expr("^((?!\\.)(?!.*?\\.\\.)(?!.*?\\.\\@)[A-Za-z0-9\\.\\!\\#\\$\\%\\&\'\\*\\+\\-\\/\\=\?\\^\\_\\`\\{\\|\\}\\~]{1,64})@((?!\\.)(?!.*?\\.\\.)[A-Za-z0-9\\.\\-]{1,253})$");
     if (!regex_match(email_address, str_expr))
     {
         std::cout << email_address << " is not a valid email address" << std::endl;
@@ -274,7 +274,6 @@ void uniqueCharacters(std::string str)
     }
     if (char_set.size() == str.size())
     {
-        std::cout << "It is a valid password" << std::endl;
     }
     else
     {
@@ -283,7 +282,7 @@ void uniqueCharacters(std::string str)
 }
 void Senha::validar(std::string senha)
 {
-    std::regex str_expr("(?=^.{6,6}$)((?=.*\\d))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$");
+    std::regex str_expr("(?=^[A-Za-z0-9]{6,6}$)((?=.*[0-9]))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$");
     if (!regex_match(senha, str_expr))
     {
         throw std::invalid_argument(senha + " informe uma senha valida");
@@ -337,10 +336,6 @@ void Nome::validar(std::string nome)
         std::cout << nome << " is not a valid name" << std::endl;
         throw std::invalid_argument("Informe um nome valido");
     }
-    else
-    {
-        std::cout << nome << std::endl;
-    }
 };
 
 void Nome::setNome(std::string nome)
@@ -365,10 +360,6 @@ void Horario::validar(std::string horario)
         std::cout << horario << " is not a valid time" << std::endl;
         throw std::invalid_argument("Informe um horário valido");
     }
-    else
-    {
-        std::cout << horario << std::endl;
-    }
 };
 
 void Horario::setHorario(std::string horario)
@@ -392,10 +383,6 @@ void Nota::validar(std::string nota)
     {
         std::cout << nota << " is not a valid time" << std::endl;
         throw std::invalid_argument("Informe um horário valido");
-    }
-    else
-    {
-        std::cout << nota << std::endl;
     }
 };
 

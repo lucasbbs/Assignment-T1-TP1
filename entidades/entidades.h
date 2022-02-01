@@ -17,7 +17,7 @@ private:
 public:
     Nome setNome(std::string);
     std::string getNome();
-
+    inline static std::vector<Usuario *> getUsuarios() { return usuarios; };
     Email setEmail(std::string);
     std::string getEmail();
 

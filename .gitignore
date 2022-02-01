@@ -1,8 +1,6 @@
 /stackoverflow
-/stackoverflow/*/
-/stackoverflow/*/*.*
-
 /module_user
+/module_excursion
 /module_rating
 /module_session
 /module_user

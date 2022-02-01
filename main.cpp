@@ -12,9 +12,15 @@ vector<Codigo *> Codigo::codigos;
 
 vector<Usuario *> Usuario::usuarios;
 
+void mostrar_usuarios()
+{
+     vector<Usuario *> usuarios = Usuario::getUsuarios();
+     cout << usuarios.size() << endl;
+}
+
 int main()
 {
-     // Usuario user;
+     mostrar_usuarios();
      Cidade hongKong{"Hong Kong"}, bangkok{"Bangkok"}, macau{"Macau"}, singapura{"Singapura"}, londres{"Londres"}, paris{"Paris"}, dubai{"Dubai"}, delhi{"Delhi"}, istambul{"Istambul"}, kuala{"Kuala"}, lumpur{"Lumpur"}, novaIorque{"Nova Iorque"}, antalya{"Antalya"}, mumbai{"Mumbai"}, shenzen{"Shenzen"}, phuket{"Phuket"};
 
      string opcao{"0"};
@@ -87,6 +93,7 @@ int main()
 
           user.getNome();
      }
+     mostrar_usuarios();
 
      return 0;
 }
