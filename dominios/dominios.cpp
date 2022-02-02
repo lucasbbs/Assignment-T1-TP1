@@ -330,7 +330,8 @@ Titulo::~Titulo(){};
 
 void Nome::validar(std::string nome)
 {
-    std::regex str_expr("(?=^.{5,20}$)^(?:\\s?[A-Z](?:(?:\\.)|(?:[a-z]+?)))+?$");
+
+    std::regex str_expr("^[A-Z](?:\\.|[a-z]+)(?: [A-Z](?:\\.|[a-z]*))+$");
     if (!regex_match(nome, str_expr))
     {
         std::cout << nome << " is not a valid name" << std::endl;
