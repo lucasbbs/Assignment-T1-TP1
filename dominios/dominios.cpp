@@ -10,23 +10,33 @@
 
 // using namespace std;
 
-// Defini��es de m�todos da classe Cidade.
+// Definições de métodos da classe Cidade.
 
-void Cidade::setNome(std::string nome)
+void Cidade::setCidade(std::string cidade)
 {
-    this->nome = nome;
+    validar(cidade);
+    this->cidade = cidade;
 }
 
-void Cidade::validar(std::string nome)
+void Cidade::validar(std::string cidade)
 {
+    if (std::find(cidades.begin(), cidades.end(), cidade) == cidades.end())
+    {
+        throw std::invalid_argument("Informe um valor válido para cidade");
+    }
 }
 
-Cidade::Cidade(std::string nome) : nome{nome} { this->cidades.push_back(this->nome); };
+Cidade::Cidade(){};
+
+Cidade::Cidade(std::string cidade) : cidade{cidade}
+{
+    this->cidades.push_back(this->cidade);
+};
 
 std::vector<std::string> Cidade::getCidades() { return cidades; }
 Cidade::~Cidade() {}
 
-// Defini��es de m�todos da classe C&oacute;digo.
+// Definições de métodos da classe C&oacute;digo.
 
 int Codigo::contador{0};
 
@@ -72,11 +82,47 @@ std::string Codigo::gerarCodigo(int number)
     return code;
 }
 
+void Codigo::validar(std::string codigo)
+{
+    std::stringstream str;
+    int n{6};
+    int evenSum{};
+    int oddSum{};
+    int totalSum{};
+    int doubleNumber{};
+    int rest{};
+    std::string code{};
+
+    for (std::string::size_type i = 0; i < codigo.size(); ++i)
+    {
+        if ((i + 1) % 2 == 0)
+        {
+            doubleNumber = ((int)codigo[i] - 48) * 2;
+            if (doubleNumber > 9)
+            {
+                doubleNumber -= 9;
+            }
+            evenSum += doubleNumber;
+        }
+        else
+        {
+            oddSum += (int)codigo[i] - 48;
+        }
+    }
+
+    if ((oddSum + evenSum) % 10 != 0)
+    {
+        throw std::invalid_argument("Informe um código correto");
+    }
+}
 std::vector<Codigo *> Codigo::getCodigos() { return codigos; }
 
 void Codigo::setCodigo(std::string codigo)
 {
+    validar(codigo);
     this->codigo = codigo;
+    ++contador;
+    codigos.push_back(this);
 };
 
 Codigo::Codigo()
@@ -187,9 +233,11 @@ bool Data::ehAnoBissexto(int ano)
 
 void Data::setData(std::string data)
 {
+    validar(data);
     this->data = data;
 }
 
+Data::Data(){};
 Data::Data(std::string data) : data{data}
 {
     validar(data);
@@ -198,25 +246,26 @@ Data::~Data() {}
 
 // Defini��es de m�todos da classe Email.
 
-void Email::validar(std::string email_address)
+void Email::validar(std::string email)
 {
     std::regex str_expr("^((?!\\.)(?!.*?\\.\\.)(?!.*?\\.\\@)[A-Za-z0-9\\.\\!\\#\\$\\%\\&\'\\*\\+\\-\\/\\=\?\\^\\_\\`\\{\\|\\}\\~]{1,64})@((?!\\.)(?!.*?\\.\\.)[A-Za-z0-9\\.\\-]{1,253})$");
-    if (!regex_match(email_address, str_expr))
+    if (!regex_match(email, str_expr))
     {
-        std::cout << email_address << " is not a valid email address" << std::endl;
         throw std::invalid_argument("Informe um email valido");
     }
 };
 
-void Email::setEmail(std::string email_address)
+void Email::setEmail(std::string email)
 {
-    this->email_address = email_address;
+    validar(email);
+    this->email = email;
 };
-Email::Email(std::string email_address) : email_address{email_address}
+Email::Email(std::string email) : email{email}
 {
-    validar(email_address);
+    validar(email);
 };
 Email::~Email(){};
+Email::Email(){};
 
 // Defini��es de m�todos da classe Endereco.
 
@@ -225,13 +274,13 @@ void Endereco::validar(std::string endereco)
     std::regex str_expr("^(?:(?!.*[ ]{2})(?!.*[\\.]{2})(?:.{0,20}$))$");
     if (!regex_match(endereco, str_expr))
     {
-        std::cout << endereco << " is not a valid address" << std::endl;
         throw std::invalid_argument("Informe um endereco valido");
     }
 };
 
 void Endereco::setEndereco(std::string endereco)
 {
+    validar(endereco);
     this->endereco = endereco;
 };
 Endereco::Endereco(std::string endereco) : endereco{endereco}
@@ -239,23 +288,27 @@ Endereco::Endereco(std::string endereco) : endereco{endereco}
     validar(endereco);
 };
 Endereco::~Endereco(){};
+Endereco::Endereco(){};
 
 // Defini��es de m�todos da classe Descricao.
 
 void Descricao::validar(std::string descricao)
 {
-    std::regex str_expr("^(?:(?!.*[ ]{2})(?!.*[\\.]{2})(?:.{0,30}$))$");
+    std::regex str_expr("^(?:(?!.*[ ][ ])(?!.*[\\.][\\.])(?:.{0,30}$))$");
     if (!regex_match(descricao, str_expr))
     {
-        std::cout << descricao << " is not a valid address" << std::endl;
         throw std::invalid_argument("Informe um descricao valido");
     }
 };
 
 void Descricao::setDescricao(std::string descricao)
 {
+    validar(descricao);
     this->descricao = descricao;
 };
+
+Descricao::Descricao(){};
+
 Descricao::Descricao(std::string descricao) : descricao{descricao}
 {
     validar(descricao);
@@ -292,6 +345,7 @@ void Senha::validar(std::string senha)
 
 void Senha::setSenha(std::string senha)
 {
+    validar(senha);
     this->senha = senha;
 };
 
@@ -301,6 +355,7 @@ Senha::Senha(std::string senha) : senha{senha}
 };
 
 Senha::~Senha(){};
+Senha::Senha(){};
 
 // Defini��es de m�todos da classe Titulo.
 
@@ -309,13 +364,13 @@ void Titulo::validar(std::string titulo)
     std::regex str_expr("^(?:(?!.*[ ]{2})(?!.*[\\.]{2})(?=^.{5,20}$)(?=.*[A-Z])(?=.*[a-z]).*)$");
     if (!regex_match(titulo, str_expr))
     {
-        std::cout << titulo << " is not a valid title" << std::endl;
         throw std::invalid_argument("Informe um titulo valido");
     }
 };
 
 void Titulo::setTitulo(std::string titulo)
 {
+    validar(titulo);
     this->titulo = titulo;
 };
 
@@ -324,6 +379,7 @@ Titulo::Titulo(std::string titulo) : titulo{titulo}
     validar(titulo);
 };
 
+Titulo::Titulo(){};
 Titulo::~Titulo(){};
 
 // Defini��es de m�todos da classe Nome.
@@ -331,16 +387,16 @@ Titulo::~Titulo(){};
 void Nome::validar(std::string nome)
 {
 
-    std::regex str_expr("^[A-Z](?:\\.|[a-z]+)(?: [A-Z](?:\\.|[a-z]*))+$");
+    std::regex str_expr("(?=^.{5,20}$)^[A-Z](?:\\.|[a-z]+)(?: [A-Z](?:\\.|[a-z]+))*$");
     if (!regex_match(nome, str_expr))
     {
-        std::cout << nome << " is not a valid name" << std::endl;
         throw std::invalid_argument("Informe um nome valido");
     }
 };
 
 void Nome::setNome(std::string nome)
 {
+    validar(nome);
     this->nome = nome;
 };
 
@@ -349,6 +405,7 @@ Nome::Nome(std::string nome) : nome{nome}
     validar(nome);
 };
 
+Nome::Nome(){};
 Nome::~Nome(){};
 
 // Defini��es de m�todos da classe Horario.
@@ -358,13 +415,13 @@ void Horario::validar(std::string horario)
     std::regex str_expr("^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$");
     if (!regex_match(horario, str_expr))
     {
-        std::cout << horario << " is not a valid time" << std::endl;
         throw std::invalid_argument("Informe um horário valido");
     }
 };
 
 void Horario::setHorario(std::string horario)
 {
+    validar(horario);
     this->horario = horario;
 };
 
@@ -373,22 +430,23 @@ Horario::Horario(std::string horario) : horario{horario}
     validar(horario);
 };
 
+Horario::Horario(){};
 Horario::~Horario(){};
 
-// Defini��es de m�todos da classe Nota.
+// Definições de métodos da classe Nota.
 
 void Nota::validar(std::string nota)
 {
     std::regex str_expr("^[0-5]$");
     if (!regex_match(nota, str_expr))
     {
-        std::cout << nota << " is not a valid time" << std::endl;
         throw std::invalid_argument("Informe um horário valido");
     }
 };
 
 void Nota::setNota(std::string nota)
 {
+    validar(nota);
     this->nota = nota;
 };
 
@@ -397,4 +455,5 @@ Nota::Nota(std::string nota) : nota{nota}
     validar(nota);
 };
 
+Nota::Nota(){};
 Nota::~Nota(){};

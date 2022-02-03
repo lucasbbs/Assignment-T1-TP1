@@ -4,29 +4,32 @@
 #include <stdexcept>
 #include <vector>
 
-// Declara��o da classe Cidade.
+// Declara��o da classe Cidade. matrícula: 17/0149374
 
 class Cidade
 {
 private:
-    std::string nome;
+    std::string cidade;
     void validar(std::string);
     static std::vector<std::string> cidades;
 
 public:
     static std::vector<std::string> getCidades();
-    void setNome(std::string nome);
-    std::string getNome() { return nome; }
-    Cidade(std::string nome);
+    void setCidade(std::string cidade);
+    std::string getCidade() { return cidade; }
+    Cidade();
+    Cidade(std::string cidade);
+    Cidade(std::string cidade, bool);
     ~Cidade();
 };
 
-// Declara��o da classe Codigo.
+// Declara��o da classe Codigo. matrícula: 17/0149374
 class Codigo
 {
 private:
     static int contador;
     std::string codigo;
+    void validar(std::string);
     std::string gerarCodigo(int);
     static std::vector<Codigo *> codigos;
 
@@ -40,7 +43,7 @@ public:
     ~Codigo();
 };
 
-// Declara��o da classe Data.
+// Declara��o da classe Data. matrícula: 17/0149374
 
 class Data
 {
@@ -55,26 +58,28 @@ private:
 public:
     void setData(std::string);
     inline std::string getData() { return data; }
+    Data();
     Data(std::string);
     ~Data();
 };
 
-// Declara��o da classe Email.
+// Declara��o da classe Email. matrícula: 17/0149374
 
 class Email
 {
 private:
-    std::string email_address;
+    std::string email;
     void validar(std::string);
 
 public:
     void setEmail(std::string);
-    inline std::string getEmail() { return email_address; }
+    inline std::string getEmail() { return email; }
     Email(std::string);
     ~Email();
+    Email();
 };
 
-// Declara��o da classe Endereco.
+// Declara��o da classe Endereco. matrícula: 17/0149374
 
 class Endereco
 {
@@ -87,9 +92,10 @@ public:
     inline std::string getEndereco() { return endereco; }
     Endereco(std::string);
     ~Endereco();
+    Endereco();
 };
 
-// Declara��o da classe Descricao.
+// Declara��o da classe Descricao. matrícula: 17/0149374
 
 class Descricao
 {
@@ -100,11 +106,12 @@ private:
 public:
     void setDescricao(std::string);
     inline std::string getDescricao() { return descricao; }
+    Descricao();
     Descricao(std::string);
     ~Descricao();
 };
 
-// Declara��o da classe Senha.
+// Declara��o da classe Senha. matrícula: 17/0149374
 
 class Senha
 {
@@ -117,9 +124,10 @@ public:
     inline std::string getSenha() { return senha; }
     Senha(std::string);
     ~Senha();
+    Senha();
 };
 
-// Declara��o da classe Titulo.
+// Declara��o da classe Titulo. matrícula: 17/0149374
 
 class Titulo
 {
@@ -132,9 +140,10 @@ public:
     inline std::string getTitulo() { return titulo; }
     Titulo(std::string);
     ~Titulo();
+    Titulo();
 };
 
-// Declara��o da classe Nome.
+// Declara��o da classe Nome. matrícula: 17/0149374
 class Nome
 {
 private:
@@ -146,9 +155,10 @@ public:
     inline std::string getNome() { return nome; }
     Nome(std::string);
     ~Nome();
+    Nome();
 };
 
-// Declara��o da classe Horario.
+// Declara��o da classe Horario. matrícula: 17/0149374
 
 class Horario
 {
@@ -161,9 +171,10 @@ public:
     inline std::string getHorario() { return horario; }
     Horario(std::string);
     ~Horario();
+    Horario();
 };
 
-// Declara��o da classe Nota.
+// Declara��o da classe Nota. matrícula: 17/0149374
 
 class Nota
 {
@@ -176,6 +187,7 @@ public:
     inline std::string getNota() { return nota; }
     Nota(std::string);
     ~Nota();
+    Nota();
 };
 
 #endif //_DATA_H_

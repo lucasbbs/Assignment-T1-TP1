@@ -15,14 +15,14 @@ private:
     static std::vector<Usuario *> usuarios;
 
 public:
-    Nome setNome(std::string);
-    std::string getNome();
+    void setNome(std::string);
+    Nome getNome();
     inline static std::vector<Usuario *> getUsuarios() { return usuarios; };
-    Email setEmail(std::string);
-    std::string getEmail();
+    void setEmail(std::string);
+    Email getEmail();
 
-    Senha setSenha(std::string);
-    std::string getSenha();
+    void setSenha(std::string);
+    Senha getSenha();
 
     Usuario();
     Usuario(std::string, std::string, std::string);

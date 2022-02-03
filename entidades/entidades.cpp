@@ -1,7 +1,9 @@
 #include "entidades.h"
 
 #include <string>
-std::string Usuario::getNome() { return nome.getNome(); }
+Nome Usuario::getNome() { return nome; }
+Email Usuario::getEmail() { return email; }
+Senha Usuario::getSenha() { return senha; }
 
 Usuario::Usuario(std::string nome, std::string email, std::string senha) : nome{nome}, email{email}, senha{senha}
 {
