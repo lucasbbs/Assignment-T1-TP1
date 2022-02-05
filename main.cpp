@@ -201,6 +201,15 @@ int main()
           break;
      }
 
+     TUIdioma testeA;
+
+    switch(testeA.run()){
+        case TUIdioma::SUCESSO: cout << "\u001b[32mSUCESSO\u001b[0m - IDIOMA" << endl;
+                                break;
+        case TUIdioma::FALHA  : cout << "\u001b[31mFALHA\u001b[0m - CODIGO" << endl;
+                                break;
+    }
+
      // string opcao{"0"};
      // std::regex str_expr("^[1-4]$");
      // while (!regex_match(opcao, str_expr))
