@@ -8,7 +8,6 @@
 
 using namespace std;
 
-vector<string> Cidade::cidades;
 vector<Codigo *> Codigo::codigos;
 
 vector<Usuario *> Usuario::usuarios;
@@ -21,7 +20,6 @@ vector<Usuario *> Usuario::usuarios;
 
 int main()
 {
-     Cidade hongKong{"Hong Kong"}, bangkok{"Bangkok"}, macau{"Macau"}, singapura{"Singapura"}, londres{"Londres"}, paris{"Paris"}, dubai{"Dubai"}, delhi{"Delhi"}, istambul{"Istambul"}, kuala{"Kuala"}, lumpur{"Lumpur"}, novaIorque{"Nova Iorque"}, antalya{"Antalya"}, mumbai{"Mumbai"}, shenzen{"Shenzen"}, phuket{"Phuket"};
      //-----------------------------------------------------------------------
      // Exemplo de teste de classe domínio.
 

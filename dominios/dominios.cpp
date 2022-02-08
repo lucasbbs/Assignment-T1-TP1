@@ -12,6 +12,8 @@
 
 // Definições de métodos da classe Cidade.
 
+std::string Cidade::cidades[16]{"Hong Kong", "Bangkok", "Macau", "Singapura", "Londres", "Paris", "Dubai", "Delhi", "Istambul", "Kuala", "Lumpur", "Nova Iorque", "Antalya", "Mumbai", "Shenzen", "Phuket"};
+
 void Cidade::setCidade(std::string cidade)
 {
     validar(cidade);
@@ -20,7 +22,7 @@ void Cidade::setCidade(std::string cidade)
 
 void Cidade::validar(std::string cidade)
 {
-    if (std::find(cidades.begin(), cidades.end(), cidade) == cidades.end())
+    if (std::find(std::begin(cidades), std::end(cidades), cidade) == std::end(cidades))
     {
         throw std::invalid_argument("Informe um valor válido para cidade");
     }
@@ -30,10 +32,8 @@ Cidade::Cidade(){};
 
 Cidade::Cidade(std::string cidade) : cidade{cidade}
 {
-    this->cidades.push_back(this->cidade);
+    validar(cidade);
 };
-
-std::vector<std::string> Cidade::getCidades() { return cidades; }
 Cidade::~Cidade() {}
 
 // Definições de métodos da classe C&oacute;digo.

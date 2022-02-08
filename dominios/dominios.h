@@ -11,7 +11,8 @@ class Cidade
 private:
     std::string cidade;
     void validar(std::string);
-    static std::vector<std::string> cidades;
+    // static std::vector<std::string> cidades;
+    static std::string cidades[16];
 
 public:
     static std::vector<std::string> getCidades();

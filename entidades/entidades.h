@@ -9,20 +9,21 @@
 class Usuario
 {
 private:
+    // static std::vector<Usuario *> usuarios;
+
     Nome nome;
     Email email;
     Senha senha;
-    static std::vector<Usuario *> usuarios;
 
 public:
-    void setNome(std::string);
-    Nome getNome();
-    inline static std::vector<Usuario *> getUsuarios() { return usuarios; };
-    void setEmail(std::string);
-    Email getEmail();
+    // inline static std::vector<Usuario *> getUsuarios() { return usuarios; };
 
+    void setNome(std::string);
+    inline Nome getNome() { return nome; }
+    void setEmail(std::string);
+    inline Email getEmail() { return email; }
     void setSenha(std::string);
-    Senha getSenha();
+    inline Senha getSenha() { return senha; }
 
     Usuario();
     Usuario(std::string, std::string, std::string);

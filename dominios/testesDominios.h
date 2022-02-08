@@ -3,7 +3,7 @@
 #ifndef TESTES_H_INCLUDED
 #define TESTES_H_INCLUDED
 
-// Incluir cabe�alhos.
+// Incluir cabeçalhos.
 
 #include "../dominios/dominios.h"
 
