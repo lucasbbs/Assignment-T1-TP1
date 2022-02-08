@@ -79,3 +79,36 @@
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
+1644067473 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\entidades.cpp
+	"entidades.h"
+	<string>
+
+1644067473 c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\entidades.h
+	"../dominios/dominios.h"
+	<string>
+	<vector>
+
+1644089146 c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\dominios\dominios.h
+	<string>
+	<stdexcept>
+	<vector>
+	<array>
+
+1644067473 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\testesentidades.cpp
+	"testesEntidades.h"
+
+1644067473 c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\testesentidades.h
+	"../dominios/dominios.h"
+	"../entidades/entidades.h"
+
+1644089066 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\dominios\dominios.cpp
+	"dominios.h"
+	<set>
+	<iostream>
+	<string>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<sstream>
+	<regex>
+

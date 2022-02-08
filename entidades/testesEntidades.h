@@ -1,9 +1,9 @@
-// Diretivas de compila��o para controlar processo de inclus�o.
+// Diretivas de compilação para controlar processo de inclusão.
 
-#ifndef TESTES_H_INCLUDED
-#define TESTES_H_INCLUDED
+#ifndef TESTES_ENTIDADES_H_INCLUDED
+#define TESTES_ENTIDADES_H_INCLUDED
 
-// Incluir cabe�alhos.
+// Incluir cabeçalhos.
 
 #include "../dominios/dominios.h"
 #include "../entidades/entidades.h"
@@ -11,42 +11,28 @@
 using namespace std;
 
 // --------------------------------------------------------------------------
-// Exemplo de declara��o de classe para teste de unidade de classe dom�nio.
+// Exemplo de declaração de classe para teste de unidade de classe Usuário.
 
-class TUCodigo
+class TUUsuario
 {
 private:
-    const static int VALOR_VALIDO = 20;   // Defini��o de constante para evitar n�mero m�gico.
-    const static int VALOR_INVALIDO = 30; // Defini��o de constante para evitar n�mero m�gico.
-    Codigo *codigo;                       // Refer�ncia para unidade em teste.
-    int estado;                           // Estado do teste.
-    void setUp();                         // M�todo para criar unidade em teste.
-    void tearDown();                      // M�todo para destruir unidade em teste.
-    void testarCenarioSucesso();          // Cen�rio de teste.
-    void testarCenarioFalha();            // Cen�rio de teste.
+    const std::string NOME_VALIDO = "John D. Doe";    // Defini��o de constante para evitar n�mero mágico.
+    const std::string NOME_INVALIDO = "John D.. Doe"; // Defini��o de constante para evitar n�mero mágico.
+    const std::string EMAIL_VALIDO = "john@doe.com";
+    const std::string EMAIL_INVALIDO = "john.@doe.com";
+    const std::string SENHA_VALIDA = "asd4WQ";
+    const std::string SENHA_INVALIDA = "aaa4WQ";
+    Usuario *usuario;            // Referência para unidade em teste.
+    int estado;                  // Estado do teste.
+    void setUp();                // Método para criar unidade em teste.
+    void tearDown();             // Método para destruir unidade em teste.
+    void testarCenarioSucesso(); // Cenário de teste.
+    void testarCenarioFalha();
 
 public:
-    const static int SUCESSO = 0; // Defini��o de constante para reportar resultado de teste.
-    const static int FALHA = -1;  // Defini��o de constante para reportar resultado de teste.
-    int run();                    // M�todo para executar teste.
+    const static int SUCESSO = 0; // Definição de constante para reportar resultado de teste.
+    const static int FALHA = -1;  // Definição de constante para reportar resultado de teste.
+    int run();                    // Método para executar teste.
 };
 
-// --------------------------------------------------------------------------
-// Exemplo de declara��o de classe para teste de unidade de classe entidade.
-
-class TUProjeto
-{
-    // private:
-    //     const static int VALOR_VALIDO   = 20;   // Defini��o de constante para evitar n�mero m�gico.
-    //     Projeto *projeto;                       // Refer�ncia para unidade em teste.
-    //     int estado;                             // Estado do teste.
-    //     void setUp();                           // M�todo para criar unidade em teste.
-    //     void tearDown();                        // M�todo para destruir unidade em teste.
-    //     void testarCenarioSucesso();            // Cen�rio de teste.
-    // public:
-    //     const static int SUCESSO =  0;          // Defini��o de constante para reportar resultado de teste.
-    //     const static int FALHA   = -1;          // Defini��o de constante para reportar resultado de teste.
-    //     int run();                              // M�todo para executar teste.
-};
-
-#endif // TESTES_H_INCLUDED
+#endif // TESTES_ENTIDADES_H_INCLUDED

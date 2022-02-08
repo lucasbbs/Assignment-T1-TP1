@@ -18,12 +18,12 @@ private:
 public:
     // inline static std::vector<Usuario *> getUsuarios() { return usuarios; };
 
-    void setNome(std::string);
-    inline Nome getNome() { return nome; }
-    void setEmail(std::string);
-    inline Email getEmail() { return email; }
-    void setSenha(std::string);
-    inline Senha getSenha() { return senha; }
+    void setNome(const Nome &nome);
+    Nome getNome();
+    void setEmail(const Email &email);
+    Email getEmail();
+    void setSenha(const Senha &senha);
+    Senha getSenha();
 
     Usuario();
     Usuario(std::string, std::string, std::string);

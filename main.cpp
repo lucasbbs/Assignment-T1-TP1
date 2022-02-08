@@ -4,19 +4,14 @@
 #include "dominios/dominios.h"
 #include "dominios/testesDominios.h"
 #include "entidades/entidades.h"
+#include "entidades/testesEntidades.h"
 #include <regex>
 
 using namespace std;
 
 vector<Codigo *> Codigo::codigos;
 
-vector<Usuario *> Usuario::usuarios;
-
-// void mostrar_usuarios()
-// {
-//      vector<Usuario *> usuarios = Usuario::getUsuarios();
-//      cout << usuarios.size() << endl;
-// }
+// vector<Usuario *> Usuario::usuarios;
 
 int main()
 {
@@ -196,6 +191,31 @@ int main()
           break;
      case TUTitulo::FALHA:
           cout << "FALHA   - TITULO" << endl;
+          break;
+     }
+
+     TUIdioma testeIdioma;
+
+     switch (testeIdioma.run())
+     {
+     case TUIdioma::SUCESSO:
+          cout << "SUCESSO - IDIOMA" << endl;
+          break;
+     case TUIdioma::FALHA:
+          cout << "FALHA - IDIOMA" << endl;
+          break;
+     }
+
+     TUUsuario testeUsuario;
+
+     switch (testeUsuario.run())
+     {
+     case TUUsuario::SUCESSO:
+          cout << "SUCESSO - USUARIO" << endl;
+          break;
+
+     case TUUsuario::FALHA:
+          cout << "FALHA - USUARIO" << endl;
           break;
      }
 

@@ -1,80 +1,87 @@
 #include "testesEntidades.h"
 
 // --------------------------------------------------------------------------
-// Implementações de métodos de classe de teste de unidade.
+// Implementaï¿½ï¿½es de mï¿½todos de classe de teste de unidade.
 
-/*
-void TUCodigo::setUp(){
-    codigo = new Codigo();
+void TUUsuario::setUp()
+{
+    usuario = new Usuario();
     estado = SUCESSO;
 }
 
-void TUCodigo::tearDown(){
-    delete codigo;
+void TUUsuario::tearDown()
+{
+    delete usuario;
 }
 
+void TUUsuario::testarCenarioSucesso()
+{
+    Nome nome;
+    nome.setNome(NOME_VALIDO);
+    usuario->setNome(nome);
+    if (usuario->getNome().getNome() != NOME_VALIDO)
+        estado = FALHA;
 
-void TUCodigo::testarCenarioSucesso(){
-    try{
-        codigo->setValor(VALOR_VALIDO);
-        if (codigo->getValor() != VALOR_VALIDO)
-            estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
+    Email email;
+    email.setEmail(EMAIL_VALIDO);
+    usuario->setEmail(email);
+    if (usuario->getEmail().getEmail() != EMAIL_VALIDO)
+        estado = FALHA;
+
+    Senha senha;
+    senha.setSenha(SENHA_VALIDA);
+    usuario->setSenha(senha);
+    if (usuario->getSenha().getSenha() != SENHA_VALIDA)
+        estado = FALHA;
+}
+
+void TUUsuario::testarCenarioFalha()
+{
+    try
+    {
+        Nome nome;
+        nome.setNome(NOME_INVALIDO);
+        usuario->setNome(nome);
         estado = FALHA;
     }
-}
+    catch (invalid_argument &excecao)
+    {
+        if (usuario->getNome().getNome() == NOME_INVALIDO)
+            estado = FALHA;
+    }
 
-void TUCodigo::testarCenarioFalha(){
-    try{
-        codigo->setValor(VALOR_INVALIDO);
+    try
+    {
+        Email email;
+        email.setEmail(EMAIL_INVALIDO);
+        usuario->setEmail(email);
         estado = FALHA;
     }
-    catch(invalid_argument &excecao){
-        if (codigo->getValor() == VALOR_INVALIDO)
+    catch (invalid_argument &excecao)
+    {
+        if (usuario->getEmail().getEmail() == EMAIL_INVALIDO)
+            estado = FALHA;
+    }
+
+    try
+    {
+        Senha senha;
+        senha.setSenha(EMAIL_INVALIDO);
+        usuario->setSenha(senha);
+        estado = FALHA;
+    }
+    catch (invalid_argument &excecao)
+    {
+        if (usuario->getSenha().getSenha() == EMAIL_INVALIDO)
             estado = FALHA;
     }
 }
 
-int TUCodigo::run(){
+int TUUsuario::run()
+{
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
     tearDown();
     return estado;
 }
-
-// --------------------------------------------------------------------------
-// Implementações de métodos de classe de teste de unidade.
-
-void TUProjeto::setUp(){
-    projeto = new Projeto();
-    estado = SUCESSO;
-}
-
-void TUProjeto::tearDown(){
-    delete projeto;
-}
-
-void TUProjeto::testarCenarioSucesso(){
-    Codigo codigo;
-    codigo.setValor(VALOR_VALIDO);
-    projeto->setCodigo(codigo);
-    if(projeto->getCodigo().getValor() != VALOR_VALIDO)
-        estado = FALHA;
-
-    Prioridade prioridade;
-    prioridade.setValor(VALOR_VALIDO);
-    projeto->setPrioridade(prioridade);
-    if(projeto->getPrioridade().getValor() != VALOR_VALIDO)
-        estado = FALHA;
-}
-
-int TUProjeto::run(){
-    setUp();
-    testarCenarioSucesso();
-    tearDown();
-    return estado;
-}
-
-*/

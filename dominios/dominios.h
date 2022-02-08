@@ -3,6 +3,7 @@
 #include <string>
 #include <stdexcept>
 #include <vector>
+#include <array>
 
 // Declara��o da classe Cidade. matrícula: 17/0149374
 
@@ -11,7 +12,6 @@ class Cidade
 private:
     std::string cidade;
     void validar(std::string);
-    // static std::vector<std::string> cidades;
     static std::string cidades[16];
 
 public:
@@ -189,6 +189,23 @@ public:
     Nota(std::string);
     ~Nota();
     Nota();
+};
+
+// Declaração da classe Idioma - Matrícula: 15/0016999
+
+class Idioma
+{
+private:
+    static std::array<std::string, 10> idiomas;
+    std::string idioma;
+    void validar(std::string);
+
+public:
+    void setIdioma(std::string);
+    inline std::string getIdioma(void)
+    {
+        return idioma;
+    }
 };
 
 #endif //_DATA_H_

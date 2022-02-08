@@ -457,3 +457,21 @@ Nota::Nota(std::string nota) : nota{nota}
 
 Nota::Nota(){};
 Nota::~Nota(){};
+
+// Definições de métodos da classe Idioma
+
+std::array<std::string, 10> Idioma::idiomas = {"Ingles", "Chines Mandarim", "Hindi", "Espanhol", "Frances", "Arabe", "Bengali", "Russo", "Portugues", "Indonesio"};
+
+void Idioma::validar(std::string idioma)
+{
+    if (std::find(idiomas.begin(), idiomas.end(), idioma) == idiomas.end())
+    {
+        throw std::invalid_argument("Argumento Invalido");
+    }
+}
+
+void Idioma::setIdioma(std::string idioma)
+{
+    validar(idioma);
+    this->idioma = idioma;
+}

@@ -8,3 +8,4 @@
 *.exe
 main2.cpp
 /doxygen
+*.layout
