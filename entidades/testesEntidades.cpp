@@ -1,7 +1,7 @@
 #include "testesEntidades.h"
 
 // --------------------------------------------------------------------------
-// Implementa��es de m�todos de classe de teste de unidade.
+// Implementações de métodos de classe de teste de unidade.
 
 void TUUsuario::setUp()
 {

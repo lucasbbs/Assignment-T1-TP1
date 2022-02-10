@@ -16,8 +16,8 @@ using namespace std;
 class TUUsuario
 {
 private:
-    const std::string NOME_VALIDO = "John D. Doe";    // Defini��o de constante para evitar n�mero mágico.
-    const std::string NOME_INVALIDO = "John D.. Doe"; // Defini��o de constante para evitar n�mero mágico.
+    const std::string NOME_VALIDO = "John D. Doe";
+    const std::string NOME_INVALIDO = "John D.. Doe";
     const std::string EMAIL_VALIDO = "john@doe.com";
     const std::string EMAIL_INVALIDO = "john.@doe.com";
     const std::string SENHA_VALIDA = "asd4WQ";

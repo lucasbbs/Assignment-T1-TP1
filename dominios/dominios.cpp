@@ -121,13 +121,11 @@ void Codigo::validar(std::string codigo)
         throw std::invalid_argument("Informe um código correto");
     }
 }
-std::vector<Codigo *> Codigo::getCodigos() { return codigos; }
 
 void Codigo::setCodigo(std::string codigo)
 {
     validar(codigo);
     this->codigo = codigo;
-    ++contador;
     codigos.push_back(this);
 };
 
@@ -138,31 +136,17 @@ Codigo::Codigo()
     codigos.push_back(this);
 }
 
-Codigo::Codigo(const Codigo &src) : codigo{src.codigo}
-{
-    this->codigo = gerarCodigo(contador + 1);
-    codigos.push_back(this);
-    ++contador;
-}
-
-Codigo::Codigo(Codigo &&src) : codigo{std::move(src.codigo)}
-{
-    this->codigo = gerarCodigo(contador + 1);
-    codigos.push_back(this);
-    ++contador;
-}
-
 Codigo::~Codigo()
 {
     //codigos.erase(std::find(codigos.begin(), codigos.end(), this));
 }
 
-// Defini��es de m�todos da classe Data.
+// Definições de métodos da classe Data.
 std::string Data::nomes_meses[12]{"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"};
 
 void Data::validar(std::string data)
 {
-    std::regex str_expr("^(?:(\\d\\d)\\/([A-Z][a-z]{2})\\/(\\d{4})|([a-z]{3})\\/(\\d\\d)\\/(\\d{4}))$");
+    std::regex str_expr("^(?:(\\d\\d)\\-([A-Z][a-z]{2})\\-(\\d{4}))$");
     if (!regex_match(data, str_expr))
     {
         throw std::invalid_argument("Informe uma data v&aacute;lida");
@@ -171,7 +155,7 @@ void Data::validar(std::string data)
     std::stringstream ss, ss_dia;
     std::string date_parts[3]{};
     std::string s = data;
-    std::string delimiter = "/";
+    std::string delimiter = "-";
     size_t pos = 0;
     std::string token;
     int i{0};
@@ -250,7 +234,7 @@ Data::Data(std::string data) : data{data}
 }
 Data::~Data() {}
 
-// Defini��es de m�todos da classe Email.
+// Definições de métodos da classe Email.
 
 void Email::validar(std::string email)
 {
@@ -273,7 +257,7 @@ Email::Email(std::string email) : email{email}
 Email::~Email(){};
 Email::Email(){};
 
-// Defini��es de m�todos da classe Endereco.
+// Definições de métodos da classe Endereco.
 
 void Endereco::validar(std::string endereco)
 {
@@ -296,7 +280,7 @@ Endereco::Endereco(std::string endereco) : endereco{endereco}
 Endereco::~Endereco(){};
 Endereco::Endereco(){};
 
-// Defini��es de m�todos da classe Descricao.
+// Definições de métodos da classe Descricao.
 
 void Descricao::validar(std::string descricao)
 {
@@ -321,7 +305,7 @@ Descricao::Descricao(std::string descricao) : descricao{descricao}
 };
 Descricao::~Descricao(){};
 
-// Defini��es de m�todos da classe Senha.
+// Definições de métodos da classe Senha.
 
 void uniqueCharacters(std::string str)
 {
@@ -341,7 +325,7 @@ void uniqueCharacters(std::string str)
 }
 void Senha::validar(std::string senha)
 {
-    std::regex str_expr("(?=^[A-Za-z0-9]{6,6}$)((?=.*[0-9]))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$");
+    std::regex str_expr("(?=^[A-Za-z0-9]{6}$)((?=.*[0-9]))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$");
     if (!regex_match(senha, str_expr))
     {
         throw std::invalid_argument(senha + " informe uma senha valida");
@@ -363,7 +347,7 @@ Senha::Senha(std::string senha) : senha{senha}
 Senha::~Senha(){};
 Senha::Senha(){};
 
-// Defini��es de m�todos da classe Titulo.
+// Definições de métodos da classe Titulo.
 
 void Titulo::validar(std::string titulo)
 {
@@ -388,7 +372,7 @@ Titulo::Titulo(std::string titulo) : titulo{titulo}
 Titulo::Titulo(){};
 Titulo::~Titulo(){};
 
-// Defini��es de m�todos da classe Nome.
+// Definições de métodos da classe Nome.
 
 void Nome::validar(std::string nome)
 {
@@ -414,7 +398,7 @@ Nome::Nome(std::string nome) : nome{nome}
 Nome::Nome(){};
 Nome::~Nome(){};
 
-// Defini��es de m�todos da classe Horario.
+// Definições de métodos da classe Horário.
 
 void Horario::validar(std::string horario)
 {

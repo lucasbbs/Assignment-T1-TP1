@@ -32,7 +32,7 @@
 	"entidades/entidades.h"
 	<regex>
 
-1643908527 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.cpp
+1644525031 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.cpp
 	"dominios.h"
 	<set>
 	<iostream>
@@ -43,26 +43,29 @@
 	<sstream>
 	<regex>
 
-1643925288 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.h
+1644524520 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.h
 	<string>
 	<stdexcept>
 	<vector>
+	<array>
 
-1643823151 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.cpp
+1644348614 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.cpp
 	"entidades.h"
 	<string>
 
-1643823037 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.h
+1644351742 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.h
 	"../dominios/dominios.h"
 	<string>
 	<vector>
 
-1643746539 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\main.cpp
+1644349806 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\main.cpp
 	<iostream>
 	<ctime>
 	<vector>
 	"dominios/dominios.h"
+	"dominios/testesDominios.h"
 	"entidades/entidades.h"
+	"entidades/testesEntidades.h"
 	<regex>
 
 1643907174 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testes.cpp
@@ -72,10 +75,10 @@
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
-1643907959 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.cpp
+1644522320 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.cpp
 	"testesEntidades.h"
 
-1643907012 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.h
+1644522353 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.h
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
@@ -111,4 +114,10 @@
 	<time.h>
 	<sstream>
 	<regex>
+
+1644347840 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.cpp
+	"testesDominios.h"
+
+1644525104 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.h
+	"../dominios/dominios.h"
 

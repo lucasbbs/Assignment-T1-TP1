@@ -7,5 +7,4 @@
 /module_user
 *.exe
 main2.cpp
-/doxygen
 *.layout

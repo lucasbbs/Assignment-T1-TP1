@@ -53,8 +53,8 @@ public:
 class TUData
 {
 private:
-    std::string VALOR_VALIDO = "29/Fev/2020";   // Definição de constante para evitar número mágico.
-    std::string VALOR_INVALIDO = "29/Fev/2022"; // Definição de constante para evitar número mágico.
+    std::string VALOR_VALIDO = "15-Fev-2020";   // Definição de constante para evitar número mágico.
+    std::string VALOR_INVALIDO = "30-Fev-2022"; // Definição de constante para evitar número mágico.
     Data *data;                                 // Referência para unidade em teste.
     int estado;                                 // Estado do teste.
     void setUp();                               // Método para criar unidade em teste.
