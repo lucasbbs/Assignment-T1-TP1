@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 
+// Declaração da classe Usuário. matrícula: 17/0149374
+
 class Usuario
 {
 private:

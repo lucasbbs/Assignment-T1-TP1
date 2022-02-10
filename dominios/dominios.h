@@ -5,7 +5,7 @@
 #include <vector>
 #include <array>
 
-// Declara��o da classe Cidade. matrícula: 17/0149374
+// Declaração da classe Cidade. matrícula: 17/0149374
 
 class Cidade
 {
@@ -24,7 +24,7 @@ public:
     ~Cidade();
 };
 
-// Declara��o da classe Codigo. matrícula: 17/0149374
+// Declaração da classe Codigo. matrícula: 17/0149374
 class Codigo
 {
 private:
@@ -44,7 +44,7 @@ public:
     ~Codigo();
 };
 
-// Declara��o da classe Data. matrícula: 17/0149374
+// Declaração da classe Data. matrícula: 17/0149374
 
 class Data
 {
@@ -64,7 +64,7 @@ public:
     ~Data();
 };
 
-// Declara��o da classe Email. matrícula: 17/0149374
+// Declaração da classe Email. matrícula: 17/0149374
 
 class Email
 {
@@ -80,7 +80,7 @@ public:
     Email();
 };
 
-// Declara��o da classe Endereco. matrícula: 17/0149374
+// Declaração da classe Endereco. matrícula: 17/0149374
 
 class Endereco
 {
@@ -96,7 +96,7 @@ public:
     Endereco();
 };
 
-// Declara��o da classe Descricao. matrícula: 17/0149374
+// Declaração da classe Descricao. matrícula: 17/0149374
 
 class Descricao
 {
@@ -112,7 +112,7 @@ public:
     ~Descricao();
 };
 
-// Declara��o da classe Senha. matrícula: 17/0149374
+// Declaração da classe Senha. matrícula: 17/0149374
 
 class Senha
 {
@@ -128,7 +128,7 @@ public:
     Senha();
 };
 
-// Declara��o da classe Titulo. matrícula: 17/0149374
+// Declaração da classe Titulo. matrícula: 17/0149374
 
 class Titulo
 {
@@ -144,7 +144,7 @@ public:
     Titulo();
 };
 
-// Declara��o da classe Nome. matrícula: 17/0149374
+// Declaração da classe Nome. matrícula: 17/0149374
 class Nome
 {
 private:
@@ -159,7 +159,7 @@ public:
     Nome();
 };
 
-// Declara��o da classe Horario. matrícula: 17/0149374
+// Declaração da classe Horario. matrícula: 17/0149374
 
 class Horario
 {
@@ -175,7 +175,7 @@ public:
     Horario();
 };
 
-// Declara��o da classe Nota. matrícula: 17/0149374
+// Declaração da classe Nota. matrícula: 17/0149374
 
 class Nota
 {

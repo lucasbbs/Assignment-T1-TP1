@@ -11,7 +11,7 @@
 using namespace std;
 
 // --------------------------------------------------------------------------
-// Exemplo de declaração de classe para teste de unidade de classe Usuário.
+// Declaração de classe para teste de unidade de classe Usuário. matrícula: 17/0149374
 
 class TUUsuario
 {

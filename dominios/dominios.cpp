@@ -84,6 +84,12 @@ std::string Codigo::gerarCodigo(int number)
 
 void Codigo::validar(std::string codigo)
 {
+    std::regex str_expr("^(?:(?![0]{7})([0-9]{7}))$");
+    if (!regex_match(codigo, str_expr))
+    {
+        throw std::invalid_argument("Informe um codigo v&aacute;lido");
+    }
+
     std::stringstream str;
     int n{6};
     int evenSum{};
