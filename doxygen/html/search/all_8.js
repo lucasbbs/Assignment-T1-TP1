@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['titulo_0',['Titulo',['../class_titulo.html',1,'']]],
+  ['titulo_0',['Titulo',['../class_titulo.html',1,'Titulo'],['../class_titulo.html#ae217999bc748d8c81fa4f9fb97ef3908',1,'Titulo::Titulo()'],['../class_titulo.html#ae48f0a7e605dd78f0b8ee63c19e1b28d',1,'Titulo::Titulo(std::string)']]],
   ['tucidade_1',['TUCidade',['../class_t_u_cidade.html',1,'']]],
   ['tucodigo_2',['TUCodigo',['../class_t_u_codigo.html',1,'']]],
   ['tudata_3',['TUData',['../class_t_u_data.html',1,'']]],

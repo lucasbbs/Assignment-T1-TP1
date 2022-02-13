@@ -1,1 +1,4 @@
-C:/Users/admin/Desktop/projetos/C++/projeto_TP1/dominios/dominios.h:174: warning: Found unknown command '@dom'
+C:/Users/admin/Desktop/projetos/C++/projeto_TP1/dominios/dominios.h:176: warning: Found unknown command '@dom'
+C:/Users/admin/Desktop/projetos/C++/projeto_TP1/dominios/dominios.h:607: warning: argument 'horario' of command @param is not found in the argument list of Nota::Nota(std::string nota)
+C:/Users/admin/Desktop/projetos/C++/projeto_TP1/dominios/dominios.h:615: warning: The following parameter of Nota::Nota(std::string nota) is not documented:
+  parameter 'nota'

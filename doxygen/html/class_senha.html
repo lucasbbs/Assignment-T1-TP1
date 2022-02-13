@@ -97,12 +97,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaadb76fb4d61a0db2766efc3dfbc6a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a766f97ce6f851cd1c3939f270351c2d5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_senha.html#a766f97ce6f851cd1c3939f270351c2d5">getSenha</a> ()</td></tr>
 <tr class="separator:a766f97ce6f851cd1c3939f270351c2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a476cbd0f2c332d82ceff22c091806746"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_senha.html#a476cbd0f2c332d82ceff22c091806746">Senha</a> (std::string)</td></tr>
-<tr class="separator:a476cbd0f2c332d82ceff22c091806746"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40f5427be43fd58d37028706d5e3dc50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_senha.html#a40f5427be43fd58d37028706d5e3dc50">~Senha</a> ()</td></tr>
-<tr class="separator:a40f5427be43fd58d37028706d5e3dc50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade5ef5c7f37a1dd7a3bea575fb745a46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_senha.html#ade5ef5c7f37a1dd7a3bea575fb745a46">Senha</a> ()</td></tr>
 <tr class="separator:ade5ef5c7f37a1dd7a3bea575fb745a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84733dabc7c91c63b330cf4cd890fb08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_senha.html#a84733dabc7c91c63b330cf4cd890fb08">Senha</a> (std::string senha)</td></tr>
+<tr class="separator:a84733dabc7c91c63b330cf4cd890fb08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f5427be43fd58d37028706d5e3dc50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_senha.html#a40f5427be43fd58d37028706d5e3dc50">~Senha</a> ()</td></tr>
+<tr class="separator:a40f5427be43fd58d37028706d5e3dc50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Padrão para representação de <a class="el" href="class_senha.html">Senha</a>.</p>
@@ -114,11 +114,29 @@ Public Member Functions</h2></td></tr>
 <li>Existe pelo menos uma letra maiúscula, uma letra minúscula e um dígito.</li>
 </ul>
 </li>
-<li>A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo descricao será instanciado como uma string vazia, "" </li>
+<li>A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo senha não será instanciado </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a476cbd0f2c332d82ceff22c091806746" name="a476cbd0f2c332d82ceff22c091806746"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a476cbd0f2c332d82ceff22c091806746">&#9670;&nbsp;</a></span>Senha() <span class="overload">[1/2]</span></h2>
+<a id="ade5ef5c7f37a1dd7a3bea575fb745a46" name="ade5ef5c7f37a1dd7a3bea575fb745a46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade5ef5c7f37a1dd7a3bea575fb745a46">&#9670;&nbsp;</a></span>Senha() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Senha::Senha </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Inicializa o objeto sem um valor definido para senha. </p>
+
+</div>
+</div>
+<a id="a84733dabc7c91c63b330cf4cd890fb08" name="a84733dabc7c91c63b330cf4cd890fb08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84733dabc7c91c63b330cf4cd890fb08">&#9670;&nbsp;</a></span>Senha() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,24 +146,6 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>senha</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Inicializa o objeto sem um valor definido para senha. </p>
-
-</div>
-</div>
-<a id="a40f5427be43fd58d37028706d5e3dc50" name="a40f5427be43fd58d37028706d5e3dc50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40f5427be43fd58d37028706d5e3dc50">&#9670;&nbsp;</a></span>~Senha()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Senha::~Senha </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -167,14 +167,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ade5ef5c7f37a1dd7a3bea575fb745a46" name="ade5ef5c7f37a1dd7a3bea575fb745a46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade5ef5c7f37a1dd7a3bea575fb745a46">&#9670;&nbsp;</a></span>Senha() <span class="overload">[2/2]</span></h2>
+<a id="a40f5427be43fd58d37028706d5e3dc50" name="a40f5427be43fd58d37028706d5e3dc50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f5427be43fd58d37028706d5e3dc50">&#9670;&nbsp;</a></span>~Senha()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Senha::Senha </td>
+          <td class="memname">Senha::~Senha </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -250,7 +250,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_senha.html">Senha</a></li>
-    <li class="footer">Generated on Thu Feb 10 2022 18:21:41 for Projeto 1 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Thu Feb 10 2022 20:52:46 for Projeto 1 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

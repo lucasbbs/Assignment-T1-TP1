@@ -88,19 +88,157 @@ $(document).ready(function(){initNavTree('class_horario.html',''); initResizable
   <div class="headertitle"><div class="title">Horario Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="dominios_8h_source.html">dominios.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2daf084639f09a871b27c76705d58a18"><td class="memItemLeft" align="right" valign="top"><a id="a2daf084639f09a871b27c76705d58a18" name="a2daf084639f09a871b27c76705d58a18"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHorario</b> (std::string)</td></tr>
+<tr class="memitem:a2daf084639f09a871b27c76705d58a18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a2daf084639f09a871b27c76705d58a18">setHorario</a> (std::string)</td></tr>
 <tr class="separator:a2daf084639f09a871b27c76705d58a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93d8ace6915ac2103fc4e8ac31d45867"><td class="memItemLeft" align="right" valign="top"><a id="a93d8ace6915ac2103fc4e8ac31d45867" name="a93d8ace6915ac2103fc4e8ac31d45867"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getHorario</b> ()</td></tr>
+<tr class="memitem:a93d8ace6915ac2103fc4e8ac31d45867"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a93d8ace6915ac2103fc4e8ac31d45867">getHorario</a> ()</td></tr>
 <tr class="separator:a93d8ace6915ac2103fc4e8ac31d45867"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3afbffb68590e6b12e65fd3ee9153de"><td class="memItemLeft" align="right" valign="top"><a id="aa3afbffb68590e6b12e65fd3ee9153de" name="aa3afbffb68590e6b12e65fd3ee9153de"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Horario</b> (std::string)</td></tr>
-<tr class="separator:aa3afbffb68590e6b12e65fd3ee9153de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46801f79049e424c1a520838c33397b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a46801f79049e424c1a520838c33397b2">Horario</a> ()</td></tr>
+<tr class="separator:a46801f79049e424c1a520838c33397b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2a888e6f2a4446357bcb35b25ea98f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#add2a888e6f2a4446357bcb35b25ea98f">Horario</a> (std::string horario)</td></tr>
+<tr class="separator:add2a888e6f2a4446357bcb35b25ea98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e28b41481668ea7a2a23ecb0c6bd021"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a5e28b41481668ea7a2a23ecb0c6bd021">~Horario</a> ()</td></tr>
+<tr class="separator:a5e28b41481668ea7a2a23ecb0c6bd021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Padrão para representação de <a class="el" href="class_horario.html">Horario</a>.</p>
+<p >Regras de formato:</p>
+<ul>
+<li><a class="el" href="class_horario.html">Horario</a> é válido caso seja uma string com o formato <b>HH:MM</b>, onde:<ul>
+<li>HH representa uma string numérica com valores de 00 a 23</li>
+<li>MM representa uma string numérica com valroes de 00 a 59:</li>
+</ul>
+</li>
+<li>A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo horario não será instanciado </li>
+</ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a46801f79049e424c1a520838c33397b2" name="a46801f79049e424c1a520838c33397b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46801f79049e424c1a520838c33397b2">&#9670;&nbsp;</a></span>Horario() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Horario::Horario </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Inicializa o objeto sem um valor definido para horario. </p>
+
+</div>
+</div>
+<a id="add2a888e6f2a4446357bcb35b25ea98f" name="add2a888e6f2a4446357bcb35b25ea98f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add2a888e6f2a4446357bcb35b25ea98f">&#9670;&nbsp;</a></span>Horario() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Horario::Horario </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>horario</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Inicializa o objeto com o horario informado caso o mesmo seja válido.</p>
+<p >Lança exceção caso o horario informado seja inválido.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">horario</td><td><a class="el" href="class_horario.html">Horario</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5e28b41481668ea7a2a23ecb0c6bd021" name="a5e28b41481668ea7a2a23ecb0c6bd021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e28b41481668ea7a2a23ecb0c6bd021">&#9670;&nbsp;</a></span>~Horario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Horario::~Horario </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Destrói o objeto instanciado </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a93d8ace6915ac2103fc4e8ac31d45867" name="a93d8ace6915ac2103fc4e8ac31d45867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d8ace6915ac2103fc4e8ac31d45867">&#9670;&nbsp;</a></span>getHorario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Horario::getHorario </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Retorna horário.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_horario.html">Horario</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a2daf084639f09a871b27c76705d58a18" name="a2daf084639f09a871b27c76705d58a18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2daf084639f09a871b27c76705d58a18">&#9670;&nbsp;</a></span>setHorario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Horario::setHorario </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>horario</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Armazena o valor de horário.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">horario</td><td><a class="el" href="class_horario.html">Horario</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<p>Lança exceção caso o horario informado seja inválido. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="dominios_8h_source.html">dominios.h</a></li>
 <li>dominios.cpp</li>
@@ -111,7 +249,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getHorario</b>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_horario.html">Horario</a></li>
-    <li class="footer">Generated on Thu Feb 10 2022 18:21:41 for Projeto 1 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Thu Feb 10 2022 20:52:46 for Projeto 1 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>
