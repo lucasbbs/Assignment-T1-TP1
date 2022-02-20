@@ -234,6 +234,34 @@ Data::Data(std::string data) : data{data}
 }
 Data::~Data() {}
 
+// Definições de métode de classe Duração.
+
+std::int Duracao::duracao[5]{30,60,90,120,180};
+
+void Duracao::setDuracao(std::int duracao)
+{
+	validar(duracao);
+	this->duracao = duracao;
+}
+
+void duracao::validar(std::int duracao)
+{
+	if (std::find(std::begin(duracao),std::end(duracao), duracao) == std::end(duracao))
+	{
+		throw std::invalid_argument("informe um valor válido para duracao");
+	}
+		
+}
+
+Duracao::duracao(){};
+
+Duracao::duracao(std::int duracao) : duracao{duracao}
+{
+	validar(duracao);
+};
+
+Duracao::~Duracao(){}
+
 // Definições de métodos da classe Email.
 
 void Email::validar(std::string email)
