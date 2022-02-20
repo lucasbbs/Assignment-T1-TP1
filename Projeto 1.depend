@@ -32,7 +32,7 @@
 	"entidades/entidades.h"
 	<regex>
 
-1644525031 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.cpp
+1645399776 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.cpp
 	"dominios.h"
 	<set>
 	<iostream>
@@ -43,7 +43,7 @@
 	<sstream>
 	<regex>
 
-1644524520 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.h
+1645399776 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.h
 	<string>
 	<stdexcept>
 	<vector>
@@ -53,12 +53,12 @@
 	"entidades.h"
 	<string>
 
-1644351742 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.h
+1645399778 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.h
 	"../dominios/dominios.h"
 	<string>
 	<vector>
 
-1644349806 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\main.cpp
+1645399778 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\main.cpp
 	<iostream>
 	<ctime>
 	<vector>
@@ -75,10 +75,10 @@
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
-1644522320 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.cpp
+1645399778 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.cpp
 	"testesEntidades.h"
 
-1644522353 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.h
+1645399778 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.h
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
@@ -115,10 +115,10 @@
 	<sstream>
 	<regex>
 
-1644347840 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.cpp
+1645399776 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.cpp
 	"testesDominios.h"
 
-1644525104 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.h
+1645399776 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.h
 	"../dominios/dominios.h"
 
 1645317700 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\dominios\testesdominios.cpp
