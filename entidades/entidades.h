@@ -143,5 +143,45 @@ inline void Sessao::setIdioma(const Idioma& idioma){
 inline Idioma Sessao::getIdioma() const {
     return idioma;
 }
+// Declaração de classe Avaliação
+
+class Avaliacao
+{
+private:
+	Codigo codigo; 
+	Nota nota;
+	Descricao descricao;
+
+public:
+	void setCodigo(const Codigo &codigo);
+	Codigo getCodigo() const;
+	
+	void setNota(const Nota &nota);
+	Nota getNota() const;
+	
+	void setDescricao(const Descricao &descricao);
+	Descricao getDescricao() const;
+};
+
+inline void Avaliacao::setCodigo(const Codigo& codigo){
+	this -> codigo = codigo;
+}
+inline codigo Avaliacao::getCodigo() const {
+	return codigo;
+}
+
+inline void Avaliacao::setNota(const Nota& nota){
+	this -> nota = nota;
+}
+inline codigo Avaliacao::getNota() const {
+	return nota;
+}
+
+inline void Avaliacao::setDescricao(const Descricao& descricao){
+	this -> Descricao = Descricao;
+}
+inline codigo Avaliacao::getDescricao() const {
+	return descricao;
+}
 
 #endif // ENTIDADES_H_INCLUDED
