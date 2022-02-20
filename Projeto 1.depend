@@ -82,29 +82,29 @@
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
-1644067473 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\entidades.cpp
+1645313168 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\entidades.cpp
 	"entidades.h"
 	<string>
 
-1644067473 c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\entidades.h
+1645320024 c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\entidades.h
 	"../dominios/dominios.h"
 	<string>
 	<vector>
 
-1644089146 c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\dominios\dominios.h
+1645321073 c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\dominios\dominios.h
 	<string>
 	<stdexcept>
 	<vector>
 	<array>
 
-1644067473 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\testesentidades.cpp
+1645319029 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\testesentidades.cpp
 	"testesEntidades.h"
 
-1644067473 c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\testesentidades.h
+1645318979 c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\entidades\testesentidades.h
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
-1644089066 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\dominios\dominios.cpp
+1645320913 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\dominios\dominios.cpp
 	"dominios.h"
 	<set>
 	<iostream>
@@ -120,4 +120,20 @@
 
 1644525104 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.h
 	"../dominios/dominios.h"
+
+1645317700 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\dominios\testesdominios.cpp
+	"testesDominios.h"
+
+1645317731 c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\dominios\testesdominios.h
+	"../dominios/dominios.h"
+
+1645320965 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\main.cpp
+	<iostream>
+	<ctime>
+	<vector>
+	"dominios/dominios.h"
+	"dominios/testesDominios.h"
+	"entidades/entidades.h"
+	"entidades/testesEntidades.h"
+	<regex>
 

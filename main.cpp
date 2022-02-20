@@ -219,6 +219,21 @@ int main()
           break;
      }
 
+    // Instanciar classe de teste de entidade Sessao
+    TUSessao testeSessao;
+
+    // Invocar método e apressentar mensagem acerca do resultado do teste.
+    switch (testeSessao.run())
+    {
+        case TUSessao::SUCESSO:
+            cout << "SUCESSO - SESSAO" << endl;
+            break;
+        case TUSessao::FALHA:
+            cout << "FALHA - SESSAO" << endl;
+            break;
+    }
+
+
      // string opcao{"0"};
      // std::regex str_expr("^[1-4]$");
      // while (!regex_match(opcao, str_expr))

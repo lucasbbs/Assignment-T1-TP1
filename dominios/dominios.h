@@ -621,15 +621,63 @@ public:
 
 // Declaração da classe Idioma - Matrícula: 15/0016999
 
+///
+/// Padrão para representação de Idioma.
+///
+/// Regras de formato:
+///
+/// - Idioma é válido caso <b>seja informado</b> um valor dentro os seguintes: "Ingles", "Chines Mandarim", "Hindi", "Espanhol", "Frances", "Arabe", "Bengali", "Russo", "Portugues", "Indonesio".
+/// - A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo cidade não será instanciado
+///
+
 class Idioma
 {
 private:
-    static std::array<std::string, 10> idiomas;
+    static const std::array<std::string, 10> idiomas;
     std::string idioma;
     void validar(std::string);
 
 public:
+
+    ///
+    /// Inicializa o objeto sem um valor definido para idioma.
+    ///
+    Idioma();
+
+    ///
+    /// Inicializa o objeto com o idioma informado caso o mesmo seja válido.
+    ///
+    /// Lança exceção caso o idioma informado não seja válido.
+    ///
+    /// @param idioma Idioma.
+    ///
+    /// @throw invalid_argument
+    ///
+    Idioma(std::string);
+
+    ///
+    /// Destrói o objeto instanciado
+    ///
+    ~Idioma();
+
+    ///
+    /// Armazena o idioma.
+    ///
+    /// @param idioma Nome do idioma.
+    ///
+    /// @return void
+    ///
+    /// @throw invalid_argument
+    ///
+
     void setIdioma(std::string);
+
+    ///
+    /// Retorna idioma.
+    ///
+    /// @return Idioma.
+    ///
+
     inline std::string getIdioma(void)
     {
         return idioma;

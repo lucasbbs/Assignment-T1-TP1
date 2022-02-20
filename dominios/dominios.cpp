@@ -450,7 +450,7 @@ Nota::~Nota(){};
 
 // Definições de métodos da classe Idioma
 
-std::array<std::string, 10> Idioma::idiomas = {"Ingles", "Chines Mandarim", "Hindi", "Espanhol", "Frances", "Arabe", "Bengali", "Russo", "Portugues", "Indonesio"};
+const std::array<std::string, 10> Idioma::idiomas {"Ingles", "Chines Mandarim", "Hindi", "Espanhol", "Frances", "Arabe", "Bengali", "Russo", "Portugues", "Indonesio"};
 
 void Idioma::validar(std::string idioma)
 {
@@ -460,8 +460,16 @@ void Idioma::validar(std::string idioma)
     }
 }
 
+Idioma::Idioma(std::string idioma) {
+    validar(idioma);
+    this->idioma = idioma;
+}
+
 void Idioma::setIdioma(std::string idioma)
 {
     validar(idioma);
     this->idioma = idioma;
 }
+
+Idioma::Idioma(){}
+Idioma::~Idioma(){}

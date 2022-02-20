@@ -12,6 +12,7 @@ var searchData=
   ['tunome_9',['TUNome',['../class_t_u_nome.html',1,'']]],
   ['tunota_10',['TUNota',['../class_t_u_nota.html',1,'']]],
   ['tusenha_11',['TUSenha',['../class_t_u_senha.html',1,'']]],
-  ['tutitulo_12',['TUTitulo',['../class_t_u_titulo.html',1,'']]],
-  ['tuusuario_13',['TUUsuario',['../class_t_u_usuario.html',1,'']]]
+  ['tusessao_12',['TUSessao',['../class_t_u_sessao.html',1,'']]],
+  ['tutitulo_13',['TUTitulo',['../class_t_u_titulo.html',1,'']]],
+  ['tuusuario_14',['TUUsuario',['../class_t_u_usuario.html',1,'']]]
 ];

@@ -35,4 +35,25 @@ public:
     int run();                    // Método para executar teste.
 };
 
+
+// --------------------------------------------------------------------------
+// Declaração de classe para teste de unidade de classe Sessão. matrícula: 15/0016999
+
+class TUSessao {
+private:
+  const std::string VALOR_VALIDO_CODIGO {"0000026"};   // Definição de constante para evitar número mágico.
+  const std::string VALOR_VALIDO_DATA {"15-Fev-2020"};
+  const std::string VALOR_VALIDO_HORARIO {"04:58"};
+  const std::string VALOR_VALIDO_IDIOMA {"Chines Mandarim"};
+  Sessao *sessao;                       // Referência para unidade em teste.
+  int estado;                             // Estado do teste.
+  void setUp();                           // Método para criar unidade em teste.
+  void tearDown();                        // Método para destruir unidade em teste.
+  void testarCenarioSucesso();            // Cenário de teste.
+public:
+  const static int SUCESSO =  0;          // Definição de constante para reportar resultado de teste.
+  const static int FALHA   = -1;          // Definição de constante para reportar resultado de teste.
+  int run();                              // Método para executar teste.
+};
+
 #endif // TESTES_ENTIDADES_H_INCLUDED

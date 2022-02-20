@@ -564,8 +564,8 @@ int TUTitulo::run()
 // --------------------------------------------------------------------------
 // Implementações de métodos de classe de teste de unidade do domínio Idioma.
 
-std::string TUIdioma::VALOR_VALIDO = "Chines Mandarim";
-std::string TUIdioma::VALOR_INVALIDO = "Mandarim";
+const std::string TUIdioma::VALOR_VALIDO {"Chines Mandarim"};
+const std::string TUIdioma::VALOR_INVALIDO {"Chines"};
 
 void TUIdioma::setUp(){
     idioma = new Idioma();
