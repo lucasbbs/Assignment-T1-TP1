@@ -686,4 +686,70 @@ public:
     }
 };
 
+// Declaração da classe Duracao - Matrícula: 18/0131699
+
+///
+/// Padrão para representação de Duração.
+///
+/// Regras de formato:
+///
+/// - Duração é válido caso seja informado um valor dentro os seguintes: {30,60,90,120,180}
+///
+
+
+class Duracao
+{
+private:
+    static const std::array<std::int, 5> duracao;
+    std::int duracao;
+    void validar(std::int);
+
+public:
+
+    /// Armazena o valor de duracao
+    ///
+    /// 
+    /// 
+    ///
+    Duracao();
+
+    ///
+    /// Inicializa o objeto com a duracao informado caso o mesmo seja válido.
+    ///
+    /// Lança exceção caso a duracao informado não seja válido.
+    ///
+    /// @param duracao duracao.
+    ///
+    /// @throw invalid_argument
+    ///
+    Duracao(std::int);
+
+    ///
+    /// Destrói o objeto instanciado
+    ///
+    ~duracao();
+
+    ///
+    /// Armazena a duracao.
+    ///
+    /// @param deuracao.
+    ///
+    /// @return void
+    ///
+    /// @throw invalid_argument
+    ///
+
+    void setDuracao(std::int);
+
+    ///
+    /// Retorna duracao.
+    ///
+    /// @return duracao.
+    ///
+
+    inline std::string getDuracao(void)
+    {
+        return duracao;
+    }
+};
 #endif //_DATA_H_
