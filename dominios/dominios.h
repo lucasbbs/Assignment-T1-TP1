@@ -599,10 +599,12 @@ public:
     /// @return Nota.
     ///
     inline std::string getNota() { return nota; }
+
     ///
     /// Inicializa o objeto sem um valor definido para nota.
     ///
     Nota();
+
     ///
     /// Inicializa o objeto com a nota informada caso a mesma seja válida.
     ///
@@ -613,6 +615,7 @@ public:
     /// @throw invalid_argument
     ///
     Nota(std::string);
+
     ///
     /// Destrói o objeto instanciado
     ///
@@ -638,7 +641,6 @@ private:
     void validar(std::string);
 
 public:
-
     ///
     /// Inicializa o objeto sem um valor definido para idioma.
     ///

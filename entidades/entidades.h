@@ -35,7 +35,7 @@ public:
     ///
     /// Armazena instância de unidade Email
     ///
-    /// @param nome
+    /// @param email
     ///
     void setEmail(const Email &email);
     ///
@@ -47,7 +47,7 @@ public:
     ///
     /// Armazena instância de unidade Senha
     ///
-    /// @param nome
+    /// @param senha
     ///
     void setSenha(const Senha &senha);
     ///
@@ -186,40 +186,161 @@ inline Idioma Sessao::getIdioma() const
 class Avaliacao
 {
 private:
-	Codigo codigo; 
-	Nota nota;
-	Descricao descricao;
+    Codigo codigo;
+    Nota nota;
+    Descricao descricao;
 
 public:
-	void setCodigo(const Codigo &codigo);
-	Codigo getCodigo() const;
-	
-	void setNota(const Nota &nota);
-	Nota getNota() const;
-	
-	void setDescricao(const Descricao &descricao);
-	Descricao getDescricao() const;
+    void setCodigo(const Codigo &codigo);
+    Codigo getCodigo() const;
+
+    void setNota(const Nota &nota);
+    Nota getNota() const;
+
+    void setDescricao(const Descricao &descricao);
+    Descricao getDescricao() const;
 };
 
-inline void Avaliacao::setCodigo(const Codigo& codigo){
-	this -> codigo = codigo;
+inline void Avaliacao::setCodigo(const Codigo &codigo)
+{
+    this->codigo = codigo;
 }
-inline codigo Avaliacao::getCodigo() const {
-	return codigo;
-}
-
-inline void Avaliacao::setNota(const Nota& nota){
-	this -> nota = nota;
-}
-inline codigo Avaliacao::getNota() const {
-	return nota;
+inline Codigo Avaliacao::getCodigo() const
+{
+    return codigo;
 }
 
-inline void Avaliacao::setDescricao(const Descricao& descricao){
-	this -> Descricao = Descricao;
+inline void Avaliacao::setNota(const Nota &nota)
+{
+    this->nota = nota;
 }
-inline codigo Avaliacao::getDescricao() const {
-	return descricao;
+inline Nota Avaliacao::getNota() const
+{
+    return nota;
 }
 
+inline void Avaliacao::setDescricao(const Descricao &descricao)
+{
+    this->descricao = descricao;
+}
+inline Descricao Avaliacao::getDescricao() const
+{
+    return descricao;
+}
+
+// Declaração da classe Excursão. matrícula: 17/0149374
+
+///
+/// Classe que representa entidade Excursão e guarda instâncias de unidades Nome, Email e Senha
+///
+class Excursão
+{
+private:
+    Codigo codigo;
+    Titulo titulo;
+    Nota nota;
+    Cidade cidade;
+    Duracao duracao;
+    Descricao descricao;
+    Endereco endereco;
+
+public:
+    ///
+    /// Armazena instância de unidade Codigo
+    ///
+    /// @param codigo
+    ///
+    void setCodigo(const Codigo &codigo);
+
+    ///
+    /// Retorna instância armazenada de unidade Codigo
+    ///
+    /// @return Codigo
+    ///
+    Codigo getCodigo();
+    ///
+    /// Armazena instância de unidade Titulo
+    ///
+    /// @param titulo
+    ///
+    void setTitulo(const Titulo &titulo);
+    ///
+    /// Retorna instância armazenada de unidade Titulo
+    ///
+    /// @return Titulo
+    ///
+    Titulo getTitulo();
+    ///
+    /// Armazena instância de unidade Nota
+    ///
+    /// @param nota
+    ///
+    void setNota(const Nota &nota);
+    ///
+    /// Retorna instância armazenada de unidade Nota
+    ///
+    /// @return Nota
+    ///
+    Nota getNota();
+
+    // Cidade
+    ///
+    /// Armazena instância de unidade Cidade
+    ///
+    /// @param cidade
+    ///
+    void setCidade(const Cidade &cidade);
+    ///
+    /// Retorna instância armazenada de unidade Cidade
+    ///
+    /// @return Cidade
+    ///
+    Cidade getCidade();
+
+    // Duracao
+    ///
+    /// Armazena instância de unidade Duracao
+    ///
+    /// @param duracao
+    ///
+    void setDuracao(const Duracao &duracao);
+    ///
+    /// Retorna instância armazenada de unidade Duracao
+    ///
+    /// @return Duracao
+    ///
+    Duracao getDuracao();
+
+    // Descricao
+    ///
+    /// Armazena instância de unidade Descricao
+    ///
+    /// @param descricao
+    ///
+    void setDescricao(const Descricao &descricao);
+    ///
+    /// Retorna instância armazenada de unidade Descricao
+    ///
+    /// @return Descricao
+    ///
+    Descricao getDescricao();
+
+    // Endereco
+    ///
+    /// Armazena instância de unidade Endereco
+    ///
+    /// @param endereco
+    ///
+    void setEndereco(const Endereco &endereco);
+    ///
+    /// Retorna instância armazenada de unidade Endereco
+    ///
+    /// @return Endereco
+    ///
+    Endereco getEndereco();
+
+    Excursão();
+    Excursão(std::string, std::string, int, std::string, int, std::string, std::string);
+    ~Excursão();
+};
 #endif // ENTIDADES_H_INCLUDED
