@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['nome_0',['Nome',['../class_nome.html',1,'Nome'],['../class_nome.html#a500b022728cd437dd749bfe625a26a4d',1,'Nome::Nome()'],['../class_nome.html#a1286afeeafed7a30af95d258f02318a6',1,'Nome::Nome(std::string)']]],
-  ['nota_1',['Nota',['../class_nota.html',1,'Nota'],['../class_nota.html#abaa6a5c3c58daf1030dd7b0e0930bd49',1,'Nota::Nota()'],['../class_nota.html#a6583cc10c5dca75a739292852d85baf7',1,'Nota::Nota(std::string)']]]
+  ['idioma_0',['Idioma',['../class_idioma.html',1,'Idioma'],['../class_idioma.html#a6722a621ce03825772493e67e5a17215',1,'Idioma::Idioma()'],['../class_idioma.html#a6afef9c00fda67260fcf1da8419ffa13',1,'Idioma::Idioma(std::string idioma)']]]
 ];

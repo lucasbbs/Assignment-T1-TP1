@@ -40,7 +40,7 @@ Cidade::~Cidade() {}
 
 int Codigo::contador{0};
 
-std::string Codigo::gerarCodigo(int number)
+std::string Codigo::gerarCodigo(int contador)
 {
     std::stringstream str;
     int n{6};
@@ -51,7 +51,7 @@ std::string Codigo::gerarCodigo(int number)
     int rest{};
     std::string code{};
 
-    code += std::to_string(number);
+    code += std::to_string(contador);
     code.insert(code.begin(), 6 - code.length(), '0');
 
     for (std::string::size_type i = 0; i < code.size(); ++i)
@@ -78,7 +78,7 @@ std::string Codigo::gerarCodigo(int number)
         rest = 10 - rest;
     }
     code += std::to_string(rest);
-    // cout << code << " This is the number being displayed" << endl;
+    // cout << code << " This is the contador being displayed" << endl;
     return code;
 }
 
@@ -236,31 +236,31 @@ Data::~Data() {}
 
 // Definições de métode de classe Duração.
 
-std::int Duracao::duracao[5]{30,60,90,120,180};
+int Duracao::duracoes[5]{30, 60, 90, 120, 180};
 
-void Duracao::setDuracao(std::int duracao)
+void Duracao::setDuracao(int duracao)
 {
-	validar(duracao);
-	this->duracao = duracao;
+    validar(duracao);
+    this->duracao = duracao;
 }
 
-void duracao::validar(std::int duracao)
+void Duracao::validar(int duracao)
 {
-	if (std::find(std::begin(duracao),std::end(duracao), duracao) == std::end(duracao))
-	{
-		throw std::invalid_argument("informe um valor válido para duracao");
-	}
-		
+
+    if (std::find(std::begin(duracoes), std::end(duracoes), duracao) == std::end(duracoes))
+    {
+        throw std::invalid_argument("informe um valor válido para duracao");
+    }
 }
 
-Duracao::duracao(){};
+Duracao::Duracao(){};
 
-Duracao::duracao(std::int duracao) : duracao{duracao}
+Duracao::Duracao(int duracao) : duracao{duracao}
 {
-	validar(duracao);
+    validar(duracao);
 };
 
-Duracao::~Duracao(){}
+Duracao::~Duracao() {}
 
 // Definições de métodos da classe Email.
 
@@ -315,7 +315,7 @@ void Descricao::validar(std::string descricao)
     std::regex str_expr("^(?:(?!.*[ ][ ])(?!.*[\\.][\\.])(?:.{0,30}$))$");
     if (!regex_match(descricao, str_expr))
     {
-        throw std::invalid_argument("Informe um descricao valido");
+        throw std::invalid_argument("Informe uma descricao valida");
     }
 };
 
@@ -335,7 +335,7 @@ Descricao::~Descricao(){};
 
 // Definições de métodos da classe Senha.
 
-void uniqueCharacters(std::string str)
+void Senha::caractersUnicos(std::string str)
 {
     std::set<char> char_set;
 
@@ -356,9 +356,9 @@ void Senha::validar(std::string senha)
     std::regex str_expr("(?=^[A-Za-z0-9]{6}$)((?=.*[0-9]))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$");
     if (!regex_match(senha, str_expr))
     {
-        throw std::invalid_argument(senha + " informe uma senha valida");
+        throw std::invalid_argument(senha + "Informe uma senha valida");
     }
-    uniqueCharacters(senha);
+    caractersUnicos(senha);
 };
 
 void Senha::setSenha(std::string senha)
@@ -453,22 +453,22 @@ Horario::~Horario(){};
 
 // Definições de métodos da classe Nota.
 
-void Nota::validar(std::string nota)
+int Nota::notas[6]{0, 1, 2, 3, 4, 5};
+void Nota::validar(int nota)
 {
-    std::regex str_expr("^[0-5]$");
-    if (!regex_match(nota, str_expr))
+    if (std::find(std::begin(notas), std::end(notas), nota) == std::end(notas))
     {
-        throw std::invalid_argument("Informe um horário valido");
+        throw std::invalid_argument("Informe uma nota válida");
     }
 };
 
-void Nota::setNota(std::string nota)
+void Nota::setNota(int nota)
 {
     validar(nota);
     this->nota = nota;
 };
 
-Nota::Nota(std::string nota) : nota{nota}
+Nota::Nota(int nota) : nota{nota}
 {
     validar(nota);
 };
@@ -478,17 +478,18 @@ Nota::~Nota(){};
 
 // Definições de métodos da classe Idioma
 
-const std::array<std::string, 10> Idioma::idiomas {"Ingles", "Chines Mandarim", "Hindi", "Espanhol", "Frances", "Arabe", "Bengali", "Russo", "Portugues", "Indonesio"};
+std::string Idioma::idiomas[10]{"Ingles", "Chines Mandarim", "Hindi", "Espanhol", "Frances", "Arabe", "Bengali", "Russo", "Portugues", "Indonesio"};
 
 void Idioma::validar(std::string idioma)
 {
-    if (std::find(idiomas.begin(), idiomas.end(), idioma) == idiomas.end())
+    if (std::find(std::begin(idiomas), std::end(idiomas), idioma) == std::end(idiomas))
     {
         throw std::invalid_argument("Argumento Invalido");
     }
 }
 
-Idioma::Idioma(std::string idioma) {
+Idioma::Idioma(std::string idioma)
+{
     validar(idioma);
     this->idioma = idioma;
 }
@@ -499,5 +500,5 @@ void Idioma::setIdioma(std::string idioma)
     this->idioma = idioma;
 }
 
-Idioma::Idioma(){}
-Idioma::~Idioma(){}
+Idioma::Idioma() {}
+Idioma::~Idioma() {}

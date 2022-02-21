@@ -205,6 +205,57 @@ int TUDescricao::run()
 }
 
 // --------------------------------------------------------------------------
+// Implementações de métodos de classe de teste de unidade do domínio Duracao.
+
+void TUDuracao::setUp()
+{
+    duracao = new Duracao();
+    estado = SUCESSO;
+}
+
+void TUDuracao::tearDown()
+{
+    delete duracao;
+}
+
+void TUDuracao::testarCenarioSucesso()
+{
+    try
+    {
+        duracao->setDuracao(VALOR_VALIDO);
+        if (duracao->getDuracao() != VALOR_VALIDO)
+            estado = FALHA;
+    }
+    catch (std::invalid_argument &excecao)
+    {
+        estado = FALHA;
+    }
+}
+
+void TUDuracao::testarCenarioFalha()
+{
+    try
+    {
+        duracao->setDuracao(VALOR_INVALIDO);
+        estado = FALHA;
+    }
+    catch (std::invalid_argument &excecao)
+    {
+        if (duracao->getDuracao() == VALOR_INVALIDO)
+            estado = FALHA;
+    }
+}
+
+int TUDuracao::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// --------------------------------------------------------------------------
 // Implementações de métodos de classe de teste de unidade do domínio Email.
 
 void TUEmail::setUp()
@@ -564,41 +615,47 @@ int TUTitulo::run()
 // --------------------------------------------------------------------------
 // Implementações de métodos de classe de teste de unidade do domínio Idioma.
 
-const std::string TUIdioma::VALOR_VALIDO {"Chines Mandarim"};
-const std::string TUIdioma::VALOR_INVALIDO {"Chines"};
-
-void TUIdioma::setUp(){
+void TUIdioma::setUp()
+{
     idioma = new Idioma();
     estado = SUCESSO;
 }
 
-void TUIdioma::tearDown(){
+void TUIdioma::tearDown()
+{
     delete idioma;
 }
 
-void TUIdioma::testarCenarioSucesso(){
-    try{
+void TUIdioma::testarCenarioSucesso()
+{
+    try
+    {
         idioma->setIdioma(VALOR_VALIDO);
         if (idioma->getIdioma() != VALOR_VALIDO)
             estado = FALHA;
     }
-    catch(std::invalid_argument &excecao){
+    catch (std::invalid_argument &excecao)
+    {
         estado = FALHA;
     }
 }
 
-void TUIdioma::testarCenarioFalha(){
-    try{
+void TUIdioma::testarCenarioFalha()
+{
+    try
+    {
         idioma->setIdioma(VALOR_INVALIDO);
         estado = FALHA;
     }
-    catch(std::invalid_argument &excecao){
+    catch (std::invalid_argument &excecao)
+    {
         if (idioma->getIdioma() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
 
-int TUIdioma::run(){
+int TUIdioma::run()
+{
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['idioma_0',['Idioma',['../class_idioma.html',1,'Idioma'],['../class_idioma.html#a6722a621ce03825772493e67e5a17215',1,'Idioma::Idioma()'],['../class_idioma.html#aa4488ae945335ea3f54a7368313c93f0',1,'Idioma::Idioma(std::string)']]]
+  ['horario_0',['Horario',['../class_horario.html',1,'Horario'],['../class_horario.html#a46801f79049e424c1a520838c33397b2',1,'Horario::Horario()'],['../class_horario.html#add2a888e6f2a4446357bcb35b25ea98f',1,'Horario::Horario(std::string horario)']]]
 ];

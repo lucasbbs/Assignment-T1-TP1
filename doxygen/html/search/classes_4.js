@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['idioma_0',['Idioma',['../class_idioma.html',1,'']]]
+  ['horario_0',['Horario',['../class_horario.html',1,'']]]
 ];

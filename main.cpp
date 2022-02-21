@@ -82,6 +82,21 @@ int main()
           break;
      }
 
+     // Instanciar classe de teste do domínio Duracao.
+
+     TUDuracao tuDuracao;
+
+     // Invocar método e apresentar mensagem acerca do resultado do teste.
+     switch (tuDuracao.run())
+     {
+     case TUDuracao::SUCESSO:
+          cout << "SUCESSO - DURACAO" << endl;
+          break;
+     case TUDuracao::FALHA:
+          cout << "FALHA   - DURACAO" << endl;
+          break;
+     }
+
      // Instanciar classe de teste do domínio Email.
 
      TUEmail testeEmail;
@@ -194,8 +209,10 @@ int main()
           break;
      }
 
+     // Instanciar classe de teste do domínio Idioma.
      TUIdioma testeIdioma;
 
+     // Invocar método e apresentar mensagem acerca do resultado do teste.
      switch (testeIdioma.run())
      {
      case TUIdioma::SUCESSO:
@@ -206,8 +223,10 @@ int main()
           break;
      }
 
+     // Instanciar classe de teste de entidade Usuario
      TUUsuario testeUsuario;
 
+     // Invocar método e apressentar mensagem acerca do resultado do teste.
      switch (testeUsuario.run())
      {
      case TUUsuario::SUCESSO:
@@ -219,20 +238,48 @@ int main()
           break;
      }
 
-    // Instanciar classe de teste de entidade Sessao
-    TUSessao testeSessao;
+     // Instanciar classe de teste de entidade Avaliacao
+     TUAvaliacao testeAvaliacao;
 
-    // Invocar método e apressentar mensagem acerca do resultado do teste.
-    switch (testeSessao.run())
-    {
-        case TUSessao::SUCESSO:
-            cout << "SUCESSO - SESSAO" << endl;
-            break;
-        case TUSessao::FALHA:
-            cout << "FALHA - SESSAO" << endl;
-            break;
-    }
+     // Invocar método e apressentar mensagem acerca do resultado do teste.
+     switch (testeAvaliacao.run())
+     {
+     case TUAvaliacao::SUCESSO:
+          cout << "SUCESSO - AVALIACAO" << endl;
+          break;
 
+     case TUAvaliacao::FALHA:
+          cout << "FALHA - AVALIACAO" << endl;
+          break;
+     }
+
+     // Instanciar classe de teste de entidade Sessao
+     TUSessao testeSessao;
+
+     // Invocar método e apressentar mensagem acerca do resultado do teste.
+     switch (testeSessao.run())
+     {
+     case TUSessao::SUCESSO:
+          cout << "SUCESSO - SESSAO" << endl;
+          break;
+     case TUSessao::FALHA:
+          cout << "FALHA - SESSAO" << endl;
+          break;
+     }
+
+     // Instanciar classe de teste de entidade Excursao
+     TUExcursao testeExcursao;
+
+     // Invocar método e apressentar mensagem acerca do resultado do teste.
+     switch (testeExcursao.run())
+     {
+     case TUExcursao::SUCESSO:
+          cout << "SUCESSO - EXCURSAO" << endl;
+          break;
+     case TUExcursao::FALHA:
+          cout << "FALHA - EXCURSAO" << endl;
+          break;
+     }
 
      // string opcao{"0"};
      // std::regex str_expr("^[1-4]$");

@@ -32,7 +32,7 @@
 	"entidades/entidades.h"
 	<regex>
 
-1645399776 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.cpp
+1645412187 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.cpp
 	"dominios.h"
 	<set>
 	<iostream>
@@ -43,22 +43,22 @@
 	<sstream>
 	<regex>
 
-1645399776 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.h
+1645412574 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.h
 	<string>
 	<stdexcept>
 	<vector>
 	<array>
 
-1644348614 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.cpp
+1645413611 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.cpp
 	"entidades.h"
 	<string>
 
-1645399778 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.h
+1645415299 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.h
 	"../dominios/dominios.h"
 	<string>
 	<vector>
 
-1645399778 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\main.cpp
+1645411112 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\main.cpp
 	<iostream>
 	<ctime>
 	<vector>
@@ -75,10 +75,10 @@
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
-1645399778 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.cpp
+1645410984 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.cpp
 	"testesEntidades.h"
 
-1645399778 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.h
+1645410691 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.h
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
@@ -115,10 +115,10 @@
 	<sstream>
 	<regex>
 
-1645399776 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.cpp
+1645415571 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.cpp
 	"testesDominios.h"
 
-1645399776 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.h
+1645415835 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.h
 	"../dominios/dominios.h"
 
 1645317700 source:c:\users\marcu\onedrive\documentos\projetos\trabalho1_tp1\trabalho-tp1\dominios\testesdominios.cpp

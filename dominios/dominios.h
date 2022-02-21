@@ -19,7 +19,7 @@ class Cidade
 {
 private:
     std::string cidade;
-    void validar(std::string);
+    void validar(std::string cidade);
     static std::string cidades[16];
 
 public:
@@ -79,7 +79,7 @@ class Codigo
 private:
     static int contador;
     std::string codigo;
-    void validar(std::string);
+    void validar(std::string codigo);
     std::string gerarCodigo(int);
     static std::vector<Codigo *> codigos;
 
@@ -125,7 +125,7 @@ private:
     std::string data;
     static const int ANO_MAX_VALIDO = 9999;
     static const int ANO_MIN_VALIDO = 2000;
-    void validar(std::string);
+    void validar(std::string data);
     bool ehAnoBissexto(int);
     static std::string nomes_meses[12];
 
@@ -139,7 +139,7 @@ public:
     ///
     /// Lança exceção caso a data informada seja inválida.
     ///
-    void setData(std::string);
+    void setData(std::string data);
     ///
     /// Retorna data.
     ///
@@ -159,7 +159,7 @@ public:
     ///
     /// @throw invalid_argument
     ///
-    Data(std::string);
+    Data(std::string data);
     ///
     /// Destrói o objeto instanciado
     ///
@@ -190,7 +190,7 @@ class Email
 {
 private:
     std::string email;
-    void validar(std::string);
+    void validar(std::string email);
 
 public:
     ///
@@ -202,7 +202,7 @@ public:
     ///
     /// Lança exceção caso a email informada seja inválido.
     ///
-    void setEmail(std::string);
+    void setEmail(std::string email);
     ///
     /// Retorna email.
     ///
@@ -222,7 +222,7 @@ public:
     ///
     /// @throw invalid_argument
     ///
-    Email(std::string);
+    Email(std::string email);
     ///
     /// Destrói o objeto instanciado
     ///
@@ -247,7 +247,7 @@ class Endereco
 {
 private:
     std::string endereco;
-    void validar(std::string);
+    void validar(std::string endereco);
 
 public:
     ///
@@ -259,7 +259,7 @@ public:
     ///
     /// Lança exceção caso o endereço informado seja inválido.
     ///
-    void setEndereco(std::string);
+    void setEndereco(std::string endereco);
     ///
     /// Retorna endereco.
     ///
@@ -279,7 +279,7 @@ public:
     ///
     /// @throw invalid_argument
     ///
-    Endereco(std::string);
+    Endereco(std::string endereco);
     ///
     /// Destrói o objeto instanciado
     ///
@@ -303,7 +303,7 @@ class Descricao
 {
 private:
     std::string descricao;
-    void validar(std::string);
+    void validar(std::string descricao);
 
 public:
     ///
@@ -315,17 +315,20 @@ public:
     ///
     /// Lança exceção caso a descrição informado seja inválida.
     ///
-    void setDescricao(std::string);
+    void setDescricao(std::string descricao);
+
     ///
     /// Retorna descrição.
     ///
     /// @return Descricao.
     ///
     inline std::string getDescricao() { return descricao; }
+
     ///
     /// Inicializa o objeto sem um valor definido para descricao.
     ///
     Descricao();
+
     ///
     /// Inicializa o objeto com a descrição informada caso a mesma seja válida.
     ///
@@ -336,6 +339,7 @@ public:
     /// @throw invalid_argument
     ///
     Descricao(std::string descricao);
+
     ///
     /// Destrói o objeto instanciado
     ///
@@ -359,7 +363,8 @@ class Senha
 {
 private:
     std::string senha;
-    void validar(std::string);
+    void caractersUnicos(std::string senha);
+    void validar(std::string senha);
 
 public:
     ///
@@ -371,7 +376,7 @@ public:
     ///
     /// Lança exceção caso a senha informado seja inválido.
     ///
-    void setSenha(std::string);
+    void setSenha(std::string senha);
     ///
     /// Retorna senha.
     ///
@@ -414,7 +419,7 @@ class Titulo
 {
 private:
     std::string titulo;
-    void validar(std::string);
+    void validar(std::string titulo);
 
 public:
     ///
@@ -426,7 +431,7 @@ public:
     ///
     /// Lança exceção caso o título informado seja inválido.
     ///
-    void setTitulo(std::string);
+    void setTitulo(std::string titulo);
     ///
     /// Retorna título.
     ///
@@ -446,7 +451,7 @@ public:
     ///
     /// @throw invalid_argument
     ///
-    Titulo(std::string);
+    Titulo(std::string titulo);
     ///
     /// Destrói o objeto instanciado
     ///
@@ -472,7 +477,7 @@ class Nome
 {
 private:
     std::string nome;
-    void validar(std::string);
+    void validar(std::string nome);
 
 public:
     ///
@@ -484,7 +489,7 @@ public:
     ///
     /// Lança exceção caso o nome informado seja inválido.
     ///
-    void setNome(std::string);
+    void setNome(std::string nome);
     ///
     /// Retorna nome.
     ///
@@ -504,7 +509,7 @@ public:
     ///
     /// @throw invalid_argument
     ///
-    Nome(std::string);
+    Nome(std::string nome);
     ///
     /// Destrói o objeto instanciado
     ///
@@ -527,7 +532,7 @@ class Horario
 {
 private:
     std::string horario;
-    void validar(std::string);
+    void validar(std::string horario);
 
 public:
     ///
@@ -539,7 +544,7 @@ public:
     ///
     /// Lança exceção caso o horario informado seja inválido.
     ///
-    void setHorario(std::string);
+    void setHorario(std::string horario);
     ///
     /// Retorna horário.
     ///
@@ -579,8 +584,9 @@ public:
 class Nota
 {
 private:
-    std::string nota;
-    void validar(std::string);
+    static int notas[6];
+    int nota;
+    void validar(int);
 
 public:
     ///
@@ -592,13 +598,13 @@ public:
     ///
     /// Lança exceção caso a nota informada seja inválida.
     ///
-    void setNota(std::string);
+    void setNota(int nota);
     ///
     /// Retorna nota.
     ///
     /// @return Nota.
     ///
-    inline std::string getNota() { return nota; }
+    inline int getNota() { return nota; }
 
     ///
     /// Inicializa o objeto sem um valor definido para nota.
@@ -610,11 +616,11 @@ public:
     ///
     /// Lança exceção caso a nota informada seja inválida.
     ///
-    /// @param horario Horario.
+    /// @param nota Nota.
     ///
     /// @throw invalid_argument
     ///
-    Nota(std::string);
+    Nota(int nota);
 
     ///
     /// Destrói o objeto instanciado
@@ -630,17 +636,40 @@ public:
 /// Regras de formato:
 ///
 /// - Idioma é válido caso <b>seja informado</b> um valor dentro os seguintes: "Ingles", "Chines Mandarim", "Hindi", "Espanhol", "Frances", "Arabe", "Bengali", "Russo", "Portugues", "Indonesio".
-/// - A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo cidade não será instanciado
+/// - A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo idioma não será instanciado
 ///
 
 class Idioma
 {
 private:
-    static const std::array<std::string, 10> idiomas;
+    static std::string idiomas[10];
     std::string idioma;
-    void validar(std::string);
+    void validar(std::string idioma);
 
 public:
+    ///
+    /// Armazena o idioma.
+    ///
+    /// @param idioma Nome do idioma.
+    ///
+    /// @return void
+    ///
+    /// @throw invalid_argument
+    ///
+
+    void setIdioma(std::string idioma);
+
+    ///
+    /// Retorna idioma.
+    ///
+    /// @return Idioma.
+    ///
+
+    inline std::string getIdioma(void)
+    {
+        return idioma;
+    }
+
     ///
     /// Inicializa o objeto sem um valor definido para idioma.
     ///
@@ -655,35 +684,12 @@ public:
     ///
     /// @throw invalid_argument
     ///
-    Idioma(std::string);
+    Idioma(std::string idioma);
 
     ///
     /// Destrói o objeto instanciado
     ///
     ~Idioma();
-
-    ///
-    /// Armazena o idioma.
-    ///
-    /// @param idioma Nome do idioma.
-    ///
-    /// @return void
-    ///
-    /// @throw invalid_argument
-    ///
-
-    void setIdioma(std::string);
-
-    ///
-    /// Retorna idioma.
-    ///
-    /// @return Idioma.
-    ///
-
-    inline std::string getIdioma(void)
-    {
-        return idioma;
-    }
 };
 
 // Declaração da classe Duracao - Matrícula: 18/0131699
@@ -694,52 +700,28 @@ public:
 /// Regras de formato:
 ///
 /// - Duração é válido caso seja informado um valor dentro os seguintes: {30,60,90,120,180}
+/// - A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo duracao não será instanciado
 ///
-
 
 class Duracao
 {
 private:
-    static const std::array<std::int, 5> duracao;
-    std::int duracao;
-    void validar(std::int);
+    static int duracoes[5];
+    int duracao;
+    void validar(int);
 
 public:
-
-    /// Armazena o valor de duracao
-    ///
-    /// 
-    /// 
-    ///
-    Duracao();
-
-    ///
-    /// Inicializa o objeto com a duracao informado caso o mesmo seja válido.
-    ///
-    /// Lança exceção caso a duracao informado não seja válido.
-    ///
-    /// @param duracao duracao.
-    ///
-    /// @throw invalid_argument
-    ///
-    Duracao(std::int);
-
-    ///
-    /// Destrói o objeto instanciado
-    ///
-    ~duracao();
-
     ///
     /// Armazena a duracao.
     ///
-    /// @param deuracao.
+    /// @param duracao.
     ///
     /// @return void
     ///
     /// @throw invalid_argument
     ///
 
-    void setDuracao(std::int);
+    void setDuracao(int duracao);
 
     ///
     /// Retorna duracao.
@@ -747,9 +729,30 @@ public:
     /// @return duracao.
     ///
 
-    inline std::string getDuracao(void)
+    inline int getDuracao()
     {
         return duracao;
     }
+
+    ///
+    /// Inicializa o objeto sem um valor definido para duracao.
+    ///
+    Duracao();
+
+    ///
+    /// Inicializa o objeto com a duracao informada caso a mesmo seja válida.
+    ///
+    /// Lança exceção caso a duracao informada não seja válida.
+    ///
+    /// @param duracao duracao.
+    ///
+    /// @throw invalid_argument
+    ///
+    Duracao(int duracao);
+
+    ///
+    /// Destrói o objeto instanciado
+    ///
+    ~Duracao();
 };
 #endif //_DATA_H_

@@ -25,7 +25,6 @@ public:
     /// @param nome
     ///
     void setNome(const Nome &nome);
-
     ///
     /// Retorna instância armazenada de unidade Codigo
     ///
@@ -56,9 +55,25 @@ public:
     /// @return Senha
     ///
     Senha getSenha();
-
+    ///
+    /// Inicializa o objeto sem um valor definido para seus atributos.
+    ///
     Usuario();
-    Usuario(std::string, std::string, std::string);
+    ///
+    /// Inicializa o objeto com o nome, email e senha informados caso os mesmos sejam válidos.
+    ///
+    /// Lança exceção caso algum dos dados informado não seja válido.
+    ///
+    /// @param nome Nome
+    /// @param email Email
+    /// @param senha Senha
+    ///
+    /// @throw invalid_argument
+    ///
+    Usuario(std::string nome, std::string email, std::string senha);
+    ///
+    /// Destrói o objeto instanciado
+    ///
     ~Usuario();
 };
 
@@ -82,105 +97,71 @@ public:
     ///
     /// @param codigo
     ///
-
     void setCodigo(const Codigo &);
-
     ///
     /// Retorna instância armazenada de unidade Codigo
     ///
     /// @return Codigo
     ///
-
     Codigo getCodigo() const;
-
     ///
     /// Armazena instância de unidade Data
     ///
     /// @param data
     ///
-
     void setData(const Data &);
-
     ///
     /// Retorna instância armazenada de unidade Data
     ///
     /// @return Data
     ///
-
     Data getData() const;
-
     ///
     /// Armazena instância de unidade Horario
     ///
     /// @param horario
     ///
-
     void setHorario(const Horario &);
-
     ///
     /// Retorna instância armazenada de unidade Horario
     ///
     /// @return Horario
     ///
-
     Horario getHorario() const;
-
     ///
     /// Armazena instância de unidade Idioma
     ///
     /// @param idioma
     ///
-
     void setIdioma(const Idioma &);
-
     ///
     /// Retorna instância armazenada de unidade Idioma
     ///
     /// @return Idioma
     ///
-
     Idioma getIdioma() const;
+    ///
+    /// Inicializa o objeto sem um valor definido para seus atributos.
+    ///
+    Sessao();
+    ///
+    /// Inicializa o objeto com a data, o horario e o idioma informados caso os mesmos sejam válidos.
+    ///
+    /// Lança exceção caso algum dos dados informado não seja válido.
+    ///
+    /// @param data Data
+    /// @param horario Horario
+    /// @param idioma Idioma
+    ///
+    /// @throw invalid_argument
+    ///
+    Sessao(std::string data, std::string horario, std::string idioma);
+    ///
+    /// Destrói o objeto instanciado
+    ///
+    ~Sessao();
 };
 
-inline void Sessao::setCodigo(const Codigo &codigo)
-{
-    this->codigo = codigo;
-}
-
-inline Codigo Sessao::getCodigo() const
-{
-    return codigo;
-}
-
-inline void Sessao::setData(const Data &data)
-{
-    this->data = data;
-}
-
-inline Data Sessao::getData() const
-{
-    return data;
-}
-
-inline void Sessao::setHorario(const Horario &horario)
-{
-    this->horario = horario;
-}
-
-inline Horario Sessao::getHorario() const
-{
-    return horario;
-}
-
-inline void Sessao::setIdioma(const Idioma &idioma)
-{
-    this->idioma = idioma;
-}
-
-inline Idioma Sessao::getIdioma() const
-{
-    return idioma;
-}
 // Declaração de classe Avaliação
 
 class Avaliacao
@@ -191,49 +172,69 @@ private:
     Descricao descricao;
 
 public:
+    ///
+    /// Armazena instância de unidade Codigo
+    ///
+    /// @param codigo
+    ///
     void setCodigo(const Codigo &codigo);
+    ///
+    /// Retorna instância armazenada de unidade Codigo
+    ///
+    /// @return Codigo
+    ///
     Codigo getCodigo() const;
-
+    ///
+    /// Armazena instância de unidade Nota
+    ///
+    /// @param nota
+    ///
     void setNota(const Nota &nota);
+    ///
+    /// Retorna instância armazenada de unidade Nota
+    ///
+    /// @return Nota
+    ///
     Nota getNota() const;
-
+    ///
+    /// Armazena instância de unidade Descricao
+    ///
+    /// @param descricao
+    ///
     void setDescricao(const Descricao &descricao);
+    ///
+    /// Retorna instância armazenada de unidade Descricao
+    ///
+    /// @return Descricao
+    ///
     Descricao getDescricao() const;
+    ///
+    /// Inicializa o objeto sem um valor definido para seus atributos.
+    ///
+    Avaliacao();
+    ///
+    /// Inicializa o objeto com a nota e a descricao informadas caso as mesmas sejam válidas.
+    ///
+    /// Lança exceção caso algum dos dados informado não seja válido.
+    ///
+    /// @param nota Nota
+    /// @param descricao Descricao
+    ///
+    /// @throw invalid_argument
+    ///
+    Avaliacao(int nota, std::string descricao);
+    ///
+    /// Destrói o objeto instanciado
+    ///
+    ~Avaliacao();
 };
-
-inline void Avaliacao::setCodigo(const Codigo &codigo)
-{
-    this->codigo = codigo;
-}
-inline Codigo Avaliacao::getCodigo() const
-{
-    return codigo;
-}
-
-inline void Avaliacao::setNota(const Nota &nota)
-{
-    this->nota = nota;
-}
-inline Nota Avaliacao::getNota() const
-{
-    return nota;
-}
-
-inline void Avaliacao::setDescricao(const Descricao &descricao)
-{
-    this->descricao = descricao;
-}
-inline Descricao Avaliacao::getDescricao() const
-{
-    return descricao;
-}
 
 // Declaração da classe Excursão. matrícula: 17/0149374
 
 ///
 /// Classe que representa entidade Excursão e guarda instâncias de unidades Nome, Email e Senha
 ///
-class Excursão
+class Excursao
 {
 private:
     Codigo codigo;
@@ -251,7 +252,6 @@ public:
     /// @param codigo
     ///
     void setCodigo(const Codigo &codigo);
-
     ///
     /// Retorna instância armazenada de unidade Codigo
     ///
@@ -282,7 +282,6 @@ public:
     /// @return Nota
     ///
     Nota getNota();
-
     // Cidade
     ///
     /// Armazena instância de unidade Cidade
@@ -296,7 +295,6 @@ public:
     /// @return Cidade
     ///
     Cidade getCidade();
-
     // Duracao
     ///
     /// Armazena instância de unidade Duracao
@@ -310,7 +308,6 @@ public:
     /// @return Duracao
     ///
     Duracao getDuracao();
-
     // Descricao
     ///
     /// Armazena instância de unidade Descricao
@@ -324,7 +321,6 @@ public:
     /// @return Descricao
     ///
     Descricao getDescricao();
-
     // Endereco
     ///
     /// Armazena instância de unidade Endereco
@@ -338,9 +334,28 @@ public:
     /// @return Endereco
     ///
     Endereco getEndereco();
-
-    Excursão();
-    Excursão(std::string, std::string, int, std::string, int, std::string, std::string);
-    ~Excursão();
+    ///
+    /// Inicializa o objeto sem um valor definido para seus atributos.
+    ///
+    Excursao();
+    ///
+    /// Inicializa o objeto com o titulo, a nota, a cidade, a duracao e a descricao informados caso os mesmos sejam válidos.
+    ///
+    /// Lança exceção caso algum dos dados informado não seja válido.
+    ///
+    /// @param titulo Titulo
+    /// @param nota Nota
+    /// @param cidade Cidade
+    /// @param duracao Duracao
+    /// @param descricao Descricao
+    ///
+    /// @throw invalid_argument
+    ///
+    Excursao(std::string titulo, int nota, std::string cidade, int duracao, std::string descricao);
+    ///
+    /// Destrói o objeto instanciado
+    ///
+    ~Excursao();
 };
+
 #endif // ENTIDADES_H_INCLUDED
