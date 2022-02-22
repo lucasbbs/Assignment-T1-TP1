@@ -98,8 +98,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getCodigo</b> 
 <tr class="separator:ad2f25d8cfc0f92e9c584c7aa5b14ede1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43412ea8505faefe73e467788ec0bfd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_codigo.html#a43412ea8505faefe73e467788ec0bfd7">setCodigo</a> (std::string codigo)</td></tr>
 <tr class="separator:a43412ea8505faefe73e467788ec0bfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab600451a62d146afd95c1c1a0fc041c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_codigo.html#ab600451a62d146afd95c1c1a0fc041c3">Codigo</a> ()</td></tr>
+<tr class="memitem:ab600451a62d146afd95c1c1a0fc041c3"><td class="memItemLeft" align="right" valign="top"><a id="ab600451a62d146afd95c1c1a0fc041c3" name="ab600451a62d146afd95c1c1a0fc041c3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Codigo</b> ()</td></tr>
+<tr class="memdesc:ab600451a62d146afd95c1c1a0fc041c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o objeto sem um valor definido para codigo. ///. <br /></td></tr>
 <tr class="separator:ab600451a62d146afd95c1c1a0fc041c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87c0193af1efcbb01a4fc7423be5b9f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_codigo.html#a87c0193af1efcbb01a4fc7423be5b9f2">Codigo</a> (std::string codigo)</td></tr>
+<tr class="separator:a87c0193af1efcbb01a4fc7423be5b9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0e35f5ff898216e43adf1780381737a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_codigo.html#af0e35f5ff898216e43adf1780381737a">~Codigo</a> ()</td></tr>
 <tr class="separator:af0e35f5ff898216e43adf1780381737a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -110,13 +114,14 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getCodigo</b> 
 <li>Código é válido caso:<ul>
 <li>seja uma string composta por <b>sete</b> dígitos</li>
 <li>seja diferente de 0000000</li>
-<li>atenda ao Algoritmo de Luhn, onde o último digito representa o dígito verificador. </li>
+<li>atenda ao Algoritmo de Luhn, onde o último digito representa o dígito verificador.</li>
 </ul>
 </li>
+<li>A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo codigo não será instanciado </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab600451a62d146afd95c1c1a0fc041c3" name="ab600451a62d146afd95c1c1a0fc041c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab600451a62d146afd95c1c1a0fc041c3">&#9670;&nbsp;</a></span>Codigo()</h2>
+<a id="a87c0193af1efcbb01a4fc7423be5b9f2" name="a87c0193af1efcbb01a4fc7423be5b9f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87c0193af1efcbb01a4fc7423be5b9f2">&#9670;&nbsp;</a></span>Codigo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -124,12 +129,26 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getCodigo</b> 
         <tr>
           <td class="memname">Codigo::Codigo </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Inicializa o objeto com um valor definido para o código, levando-se em consideração a quantidade de códigos existentes e o Algoritmo de Luhn. </p>
+<p >Inicializa o objeto com o codigo informado caso o mesmo seja válido.</p>
+<p >Lança exceção caso o codigo informado seja inválido.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td><a class="el" href="class_codigo.html">Codigo</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -181,7 +200,6 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getCodigo</b> 
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="dominios_8h_source.html">dominios.h</a></li>
-<li>main.cpp</li>
 <li>dominios.cpp</li>
 </ul>
 </div><!-- contents -->
@@ -190,7 +208,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getCodigo</b> 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_codigo.html">Codigo</a></li>
-    <li class="footer">Generated on Mon Feb 21 2022 00:58:07 for Projeto 1 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Tue Feb 22 2022 01:20:36 for Projeto 1 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

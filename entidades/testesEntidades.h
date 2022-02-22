@@ -27,7 +27,7 @@ private:
   void setUp();                // Método para criar unidade em teste.
   void tearDown();             // Método para destruir unidade em teste.
   void testarCenarioSucesso(); // Cenário de teste.
-  void testarCenarioFalha();
+  void testarCenarioFalha();   // Cenário de teste.
 
 public:
   const static int SUCESSO = 0; // Definição de constante para reportar resultado de teste.
@@ -52,7 +52,7 @@ private:
   void setUp();                // Método para criar unidade em teste.
   void tearDown();             // Método para destruir unidade em teste.
   void testarCenarioSucesso(); // Cenário de teste.
-  void testarCenarioFalha();
+  void testarCenarioFalha();   // Cenário de teste.
 
 public:
   const static int SUCESSO = 0; // Definição de constante para reportar resultado de teste.
@@ -85,7 +85,7 @@ private:
   void setUp();                // Método para criar unidade em teste.
   void tearDown();             // Método para destruir unidade em teste.
   void testarCenarioSucesso(); // Cenário de teste.
-  void testarCenarioFalha();
+  void testarCenarioFalha();   // Cenário de teste.
 
 public:
   const static int SUCESSO = 0; // Definição de constante para reportar resultado de teste.
@@ -99,15 +99,20 @@ public:
 class TUSessao
 {
 private:
-  const std::string VALOR_VALIDO_CODIGO{"0000026"}; // Definição de constante para evitar número mágico.
-  const std::string VALOR_VALIDO_DATA{"15-Fev-2020"};
-  const std::string VALOR_VALIDO_HORARIO{"04:58"};
-  const std::string VALOR_VALIDO_IDIOMA{"Chines Mandarim"};
+  const std::string CODIGO_VALIDO{"5789458"};
+  const std::string CODIGO_INVALIDO{"5789450"};
+  const std::string DATA_VALIDA{"29-Fev-2020"};
+  const std::string DATA_INVALIDA{"29-Fev-2021"};
+  const std::string HORARIO_VALIDO{"04:58"};
+  const std::string HORARIO_INVALIDO{"24:98"};
+  const std::string IDIOMA_VALIDO{"Russo"};
+  const std::string IDIOMA_INVALIDO{"Chines"};
   Sessao *sessao;              // Referência para unidade em teste.
   int estado;                  // Estado do teste.
   void setUp();                // Método para criar unidade em teste.
   void tearDown();             // Método para destruir unidade em teste.
   void testarCenarioSucesso(); // Cenário de teste.
+  void testarCenarioFalha();   // Cenário de teste.
 public:
   const static int SUCESSO = 0; // Definição de constante para reportar resultado de teste.
   const static int FALHA = -1;  // Definição de constante para reportar resultado de teste.

@@ -12,8 +12,8 @@
 ///
 /// Regras de formato:
 ///
-/// - Cidade é válida caso <b>seja informado</b> um valor dentro os seguintes: "Hong Kong", "Bangkok", "Macau", "Singapura", "Londres", "Paris", "Dubai", "Delhi", "Istambul", "Kuala", "Lumpur", "Nova Iorque", "Antalya", "Mumbai", "Shenzen", "Phuket".
-/// - A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo cidade não será instanciado
+///- Cidade é válida caso <b>seja informado</b> um valor dentro os seguintes: "Hong Kong", "Bangkok", "Macau", "Singapura", "Londres", "Paris", "Dubai", "Delhi", "Istambul", "Kuala", "Lumpur", "Nova Iorque", "Antalya", "Mumbai", "Shenzen", "Phuket".
+///- A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo cidade não será instanciado
 ///
 class Cidade
 {
@@ -23,8 +23,6 @@ private:
     static std::string cidades[16];
 
 public:
-    static std::vector<std::string> getCidades();
-
     ///
     /// Armazena o valor de cidade.
     ///
@@ -34,14 +32,13 @@ public:
     ///
     /// Lança exceção caso a cidade informada seja inválida.
     ///
-
     void setCidade(std::string cidade);
     ///
     /// Retorna cidade.
     ///
     /// @return Cidade.
     ///
-    std::string getCidade() { return cidade; }
+    inline std::string getCidade() { return cidade; }
     ///
     /// Inicializa o objeto sem um valor definido para cidade.
     ///
@@ -69,10 +66,11 @@ public:
 ///
 /// Regras de formato:
 ///
-/// - Código é válido caso:
-///     - seja uma string composta por <b>sete</b> dígitos
-///     - seja diferente de 0000000
-///     - atenda ao Algoritmo de Luhn, onde o último digito representa o dígito verificador.
+///- Código é válido caso:
+///    - seja uma string composta por <b>sete</b> dígitos
+///    - seja diferente de 0000000
+///    - atenda ao Algoritmo de Luhn, onde o último digito representa o dígito verificador.
+///- A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo codigo não será instanciado
 ///
 class Codigo
 {
@@ -80,12 +78,9 @@ private:
     static int contador;
     std::string codigo;
     void validar(std::string codigo);
-    std::string gerarCodigo(int);
-    static std::vector<Codigo *> codigos;
 
 public:
     inline std::string getCodigo() { return codigo; }
-
     ///
     /// Armazena o valor de código.
     ///
@@ -97,9 +92,18 @@ public:
     ///
     void setCodigo(std::string codigo);
     ///
-    /// Inicializa o objeto com um valor definido para o código, levando-se em consideração a quantidade de códigos existentes e o Algoritmo de Luhn.
-    ///
+    /// Inicializa o objeto sem um valor definido para codigo.    ///
     Codigo();
+    ///
+    /// Inicializa o objeto com o codigo informado caso o mesmo seja válido.
+    ///
+    /// Lança exceção caso o codigo informado seja inválido.
+    ///
+    /// @param codigo Codigo.
+    ///
+    /// @throw invalid_argument
+    ///
+    Codigo(std::string codigo);
     ///
     /// Destrói o objeto instanciado
     ///
@@ -173,7 +177,7 @@ public:
 ///
 /// Regras de formato:
 ///
-///- Email é válido caso seja uma string composta da seguinte forma <i>parte-local@domínio</i>:
+///- Email é válido caso seja uma string composta da seguinte forma <i>parte-local\@domínio</i>:
 ///     - parte-local é composta por até 64 caracteres e possui as seguintes caracterísitcas:
 ///         - Caractere de parte local pode ser letra maiúscula (A-Z) ou minúscula (a-z).
 ///         - Caractere de parte local pode ser dígito (0-9).
@@ -316,19 +320,16 @@ public:
     /// Lança exceção caso a descrição informado seja inválida.
     ///
     void setDescricao(std::string descricao);
-
     ///
     /// Retorna descrição.
     ///
     /// @return Descricao.
     ///
     inline std::string getDescricao() { return descricao; }
-
     ///
     /// Inicializa o objeto sem um valor definido para descricao.
     ///
     Descricao();
-
     ///
     /// Inicializa o objeto com a descrição informada caso a mesma seja válida.
     ///
@@ -339,7 +340,6 @@ public:
     /// @throw invalid_argument
     ///
     Descricao(std::string descricao);
-
     ///
     /// Destrói o objeto instanciado
     ///
@@ -605,12 +605,10 @@ public:
     /// @return Nota.
     ///
     inline int getNota() { return nota; }
-
     ///
     /// Inicializa o objeto sem um valor definido para nota.
     ///
     Nota();
-
     ///
     /// Inicializa o objeto com a nota informada caso a mesma seja válida.
     ///
@@ -621,7 +619,6 @@ public:
     /// @throw invalid_argument
     ///
     Nota(int nota);
-
     ///
     /// Destrói o objeto instanciado
     ///
@@ -656,25 +653,17 @@ public:
     ///
     /// @throw invalid_argument
     ///
-
     void setIdioma(std::string idioma);
-
     ///
     /// Retorna idioma.
     ///
     /// @return Idioma.
     ///
-
-    inline std::string getIdioma(void)
-    {
-        return idioma;
-    }
-
+    inline std::string getIdioma(void) { return idioma; }
     ///
     /// Inicializa o objeto sem um valor definido para idioma.
     ///
     Idioma();
-
     ///
     /// Inicializa o objeto com o idioma informado caso o mesmo seja válido.
     ///
@@ -685,7 +674,6 @@ public:
     /// @throw invalid_argument
     ///
     Idioma(std::string idioma);
-
     ///
     /// Destrói o objeto instanciado
     ///
@@ -702,7 +690,6 @@ public:
 /// - Duração é válido caso seja informado um valor dentro os seguintes: {30,60,90,120,180}
 /// - A classe também pode ser instanciada sem ter um valor definido, caso em que o atributo duracao não será instanciado
 ///
-
 class Duracao
 {
 private:
@@ -714,31 +701,23 @@ public:
     ///
     /// Armazena a duracao.
     ///
-    /// @param duracao.
+    /// @param duracao Duracao.
     ///
     /// @return void
     ///
     /// @throw invalid_argument
     ///
-
     void setDuracao(int duracao);
-
     ///
     /// Retorna duracao.
     ///
     /// @return duracao.
     ///
-
-    inline int getDuracao()
-    {
-        return duracao;
-    }
-
+    inline int getDuracao() { return duracao; }
     ///
     /// Inicializa o objeto sem um valor definido para duracao.
     ///
     Duracao();
-
     ///
     /// Inicializa o objeto com a duracao informada caso a mesmo seja válida.
     ///
@@ -749,7 +728,6 @@ public:
     /// @throw invalid_argument
     ///
     Duracao(int duracao);
-
     ///
     /// Destrói o objeto instanciado
     ///

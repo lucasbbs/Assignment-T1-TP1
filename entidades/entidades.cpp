@@ -25,7 +25,8 @@ void Usuario::setSenha(const Senha &senha)
 
 Usuario::Usuario() {}
 
-Usuario::Usuario(std::string nome, std::string email, std::string senha) : nome{nome}, email{email}, senha{senha}
+Usuario::Usuario(std::string nome, std::string email, std::string senha)
+    : nome{nome}, email{email}, senha{senha}
 {
 }
 
@@ -63,7 +64,8 @@ void Sessao::setIdioma(const Idioma &idioma)
 
 Sessao::Sessao() {}
 
-Sessao::Sessao(std::string data, std::string horario, std::string idioma) : data{data}, horario{horario}, idioma{idioma}
+Sessao::Sessao(std::string codigo, std::string data, std::string horario, std::string idioma)
+    : codigo{codigo}, data{data}, horario{horario}, idioma{idioma}
 {
 }
 
@@ -94,7 +96,8 @@ void Avaliacao::setDescricao(const Descricao &descricao)
 
 Avaliacao::Avaliacao() {}
 
-Avaliacao::Avaliacao(int nota, std::string descricao) : nota{nota}, descricao{descricao}
+Avaliacao::Avaliacao(std::string codigo, int nota, std::string descricao)
+    : codigo{codigo}, nota{nota}, descricao{descricao}
 {
 }
 
@@ -146,7 +149,8 @@ void Excursao::setEndereco(const Endereco &endereco)
 
 Excursao::Excursao() {}
 
-Excursao::Excursao(std::string titulo, int nota, std::string cidade, int duracao, std::string descricao) : titulo{titulo}, nota{nota}, cidade{cidade}, duracao{duracao}, descricao{descricao}, endereco{endereco}
+Excursao::Excursao(std::string codigo, std::string titulo, int nota, std::string cidade, int duracao, std::string descricao)
+    : codigo{codigo}, titulo{titulo}, nota{nota}, cidade{cidade}, duracao{duracao}, descricao{descricao}, endereco{endereco}
 {
 }
 Excursao::~Excursao() {}

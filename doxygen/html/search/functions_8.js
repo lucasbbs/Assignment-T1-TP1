@@ -1,7 +1,7 @@
 var searchData=
 [
   ['senha_0',['Senha',['../class_senha.html#a84733dabc7c91c63b330cf4cd890fb08',1,'Senha::Senha(std::string senha)'],['../class_senha.html#ade5ef5c7f37a1dd7a3bea575fb745a46',1,'Senha::Senha()']]],
-  ['sessao_1',['Sessao',['../class_sessao.html#a591c5608a87ac7b9dad587e5a8a0b697',1,'Sessao::Sessao()'],['../class_sessao.html#afb69bdd38657de91033961a228dcfc2d',1,'Sessao::Sessao(std::string data, std::string horario, std::string idioma)']]],
+  ['sessao_1',['Sessao',['../class_sessao.html#a591c5608a87ac7b9dad587e5a8a0b697',1,'Sessao::Sessao()'],['../class_sessao.html#a4d72b31d8ab2143581c2b008759e11ad',1,'Sessao::Sessao(std::string codigo, std::string data, std::string horario, std::string idioma)']]],
   ['setcidade_2',['setCidade',['../class_excursao.html#ac33430c5c74cbc928bc55ee566b10146',1,'Excursao::setCidade()'],['../class_cidade.html#a2424015a61b2b7e6487b3152a9821704',1,'Cidade::setCidade()']]],
   ['setcodigo_3',['setCodigo',['../class_sessao.html#ab8a6d52c518ea25fd532be26f15c4aae',1,'Sessao::setCodigo()'],['../class_avaliacao.html#a305204d8f423cc9f84d2cfbe48270eff',1,'Avaliacao::setCodigo()'],['../class_excursao.html#aa504b928fa27683eda5a3c4bb4b13d3d',1,'Excursao::setCodigo()'],['../class_codigo.html#a43412ea8505faefe73e467788ec0bfd7',1,'Codigo::setCodigo()']]],
   ['setdata_4',['setData',['../class_sessao.html#a253bd05f567ee97f850a3d640700f22b',1,'Sessao::setData()'],['../class_data.html#a0873f88749f2edc0488ee452dfb39662',1,'Data::setData()']]],

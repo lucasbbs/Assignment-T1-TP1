@@ -32,7 +32,7 @@
 	"entidades/entidades.h"
 	<regex>
 
-1645412187 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.cpp
+1645500186 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.cpp
 	"dominios.h"
 	<set>
 	<iostream>
@@ -43,30 +43,30 @@
 	<sstream>
 	<regex>
 
-1645412574 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.h
+1645497625 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\dominios.h
 	<string>
 	<stdexcept>
 	<vector>
 	<array>
 
-1645413611 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.cpp
+1645498528 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.cpp
 	"entidades.h"
 	<string>
 
-1645415299 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.h
+1645498364 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\entidades.h
 	"../dominios/dominios.h"
 	<string>
 	<vector>
 
-1645411112 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\main.cpp
-	<iostream>
+1645500428 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\main.cpp
 	<ctime>
+	<iostream>
 	<vector>
+	<regex>
 	"dominios/dominios.h"
 	"dominios/testesDominios.h"
 	"entidades/entidades.h"
 	"entidades/testesEntidades.h"
-	<regex>
 
 1643907174 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testes.cpp
 	"testes.h"
@@ -75,10 +75,10 @@
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
-1645410984 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.cpp
+1645502161 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.cpp
 	"testesEntidades.h"
 
-1645410691 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.h
+1645501758 c:\users\admin\desktop\projetos\c++\projeto_tp1\entidades\testesentidades.h
 	"../dominios/dominios.h"
 	"../entidades/entidades.h"
 
@@ -115,7 +115,8 @@
 	<sstream>
 	<regex>
 
-1645415571 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.cpp
+1645502325 source:c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.cpp
+	<iostream>
 	"testesDominios.h"
 
 1645415835 c:\users\admin\desktop\projetos\c++\projeto_tp1\dominios\testesdominios.h

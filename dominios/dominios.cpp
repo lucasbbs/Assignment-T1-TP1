@@ -8,11 +8,25 @@
 #include <sstream>
 #include <regex>
 
-// using namespace std;
-
 // Definições de métodos da classe Cidade.
 
-std::string Cidade::cidades[16]{"Hong Kong", "Bangkok", "Macau", "Singapura", "Londres", "Paris", "Dubai", "Delhi", "Istambul", "Kuala", "Lumpur", "Nova Iorque", "Antalya", "Mumbai", "Shenzen", "Phuket"};
+std::string Cidade::cidades[16]{
+    "Hong Kong",
+    "Bangkok",
+    "Macau",
+    "Singapura",
+    "Londres",
+    "Paris",
+    "Dubai",
+    "Delhi",
+    "Istambul",
+    "Kuala",
+    "Lumpur",
+    "Nova Iorque",
+    "Antalya",
+    "Mumbai",
+    "Shenzen",
+    "Phuket"};
 
 void Cidade::setCidade(std::string cidade)
 {
@@ -24,7 +38,7 @@ void Cidade::validar(std::string cidade)
 {
     if (std::find(std::begin(cidades), std::end(cidades), cidade) == std::end(cidades))
     {
-        throw std::invalid_argument("Informe um valor válido para cidade");
+        throw std::invalid_argument("Informe uma cidade valida");
     }
 }
 
@@ -40,85 +54,39 @@ Cidade::~Cidade() {}
 
 int Codigo::contador{0};
 
-std::string Codigo::gerarCodigo(int contador)
-{
-    std::stringstream str;
-    int n{6};
-    int evenSum{};
-    int oddSum{};
-    int totalSum{};
-    int doubleNumber{};
-    int rest{};
-    std::string code{};
-
-    code += std::to_string(contador);
-    code.insert(code.begin(), 6 - code.length(), '0');
-
-    for (std::string::size_type i = 0; i < code.size(); ++i)
-    {
-        if ((i + 1) % 2 == 0)
-        {
-            doubleNumber = ((int)code[i] - 48) * 2;
-            if (doubleNumber > 9)
-            {
-                doubleNumber -= 9;
-            }
-            evenSum += doubleNumber;
-        }
-        else
-        {
-            oddSum += (int)code[i] - 48;
-        }
-    }
-    totalSum = oddSum + evenSum;
-
-    rest = totalSum % 10;
-    if (rest != 0)
-    {
-        rest = 10 - rest;
-    }
-    code += std::to_string(rest);
-    // cout << code << " This is the contador being displayed" << endl;
-    return code;
-}
-
 void Codigo::validar(std::string codigo)
 {
     std::regex str_expr("^(?:(?![0]{7})([0-9]{7}))$");
     if (!regex_match(codigo, str_expr))
     {
-        throw std::invalid_argument("Informe um codigo v&aacute;lido");
+        throw std::invalid_argument("Informe um codigo valido");
     }
-
-    std::stringstream str;
-    int n{6};
-    int evenSum{};
-    int oddSum{};
-    int totalSum{};
-    int doubleNumber{};
-    int rest{};
-    std::string code{};
+    int soma_numeros_pares{};
+    int soma_numeros_impares{};
+    int soma_total{};
+    int numero_dobrado{};
+    int resto{};
 
     for (std::string::size_type i = 0; i < codigo.size(); ++i)
     {
         if ((i + 1) % 2 == 0)
         {
-            doubleNumber = ((int)codigo[i] - 48) * 2;
-            if (doubleNumber > 9)
+            numero_dobrado = ((int)codigo[i] - 48) * 2;
+            if (numero_dobrado > 9)
             {
-                doubleNumber -= 9;
+                numero_dobrado -= 9;
             }
-            evenSum += doubleNumber;
+            soma_numeros_pares += numero_dobrado;
         }
         else
         {
-            oddSum += (int)codigo[i] - 48;
+            soma_numeros_impares += (int)codigo[i] - 48;
         }
     }
 
-    if ((oddSum + evenSum) % 10 != 0)
+    if ((soma_numeros_impares + soma_numeros_pares) % 10 != 0)
     {
-        throw std::invalid_argument("Informe um código correto");
+        throw std::invalid_argument("Informe um codigo valido");
     }
 }
 
@@ -126,23 +94,32 @@ void Codigo::setCodigo(std::string codigo)
 {
     validar(codigo);
     this->codigo = codigo;
-    codigos.push_back(this);
 };
 
-Codigo::Codigo()
+Codigo::Codigo() {}
+
+Codigo::Codigo(std::string codigo)
 {
-    this->codigo = gerarCodigo(contador + 1);
-    ++contador;
-    codigos.push_back(this);
+    validar(codigo);
+    this->codigo = codigo;
 }
 
-Codigo::~Codigo()
-{
-    //codigos.erase(std::find(codigos.begin(), codigos.end(), this));
-}
+Codigo::~Codigo() {}
 
 // Definições de métodos da classe Data.
-std::string Data::nomes_meses[12]{"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"};
+std::string Data::nomes_meses[12]{
+    "Jan",
+    "Fev",
+    "Mar",
+    "Abr",
+    "Mai",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Set",
+    "Out",
+    "Nov",
+    "Dez"};
 
 void Data::validar(std::string data)
 {
@@ -152,66 +129,59 @@ void Data::validar(std::string data)
         throw std::invalid_argument("Informe uma data v&aacute;lida");
     }
 
-    std::stringstream ss, ss_dia;
-    std::string date_parts[3]{};
-    std::string s = data;
-    std::string delimiter = "-";
-    size_t pos = 0;
-    std::string token;
+    std::stringstream ss_ano, ss_dia;
+    std::string partes_data[3]{};
+    std::string delimitador = "-";
+    size_t posicao = 0;
     int i{0};
 
-    while ((pos = s.find(delimiter)) != std::string::npos)
+    while ((posicao = data.find(delimitador)) != std::string::npos)
     {
-        token = s.substr(0, pos);
-        date_parts[i] = token;
-        s.erase(0, pos + delimiter.length());
+        partes_data[i] = data.substr(0, posicao);
+        data.erase(0, posicao + delimitador.length());
         ++i;
     }
 
-    date_parts[i] = s;
+    partes_data[i] = data;
     int ano{};
-    ss << date_parts[2];
-    ss >> ano;
+    ss_ano << partes_data[2];
+    ss_ano >> ano;
 
     int mes{};
-    auto itr = std::find(Data::nomes_meses, Data::nomes_meses + 12, date_parts[1]);
+    auto itr = std::find(Data::nomes_meses, Data::nomes_meses + 12, partes_data[1]);
 
     if (itr == std::end(Data::nomes_meses))
     {
-        throw std::invalid_argument("Voc&ecirc; deve informar uma data v&aacute;lida");
+        throw std::invalid_argument("Informe uma data valida");
     }
 
     mes = std::distance(Data::nomes_meses, itr) + 1;
 
     int dia{};
-    ss_dia << date_parts[0];
+    ss_dia << partes_data[0];
     ss_dia >> dia;
-    if (ano > ANO_MAX_VALIDO ||
-        ano < ANO_MIN_VALIDO)
+    if (ano > ANO_MAX_VALIDO || ano < ANO_MIN_VALIDO)
+        throw std::invalid_argument("Informe uma data valida");
 
-        throw std::invalid_argument("Informe uma data v&aacute;lida");
     if (mes < 1 && mes > 12)
+        throw std::invalid_argument("Informe uma data valida");
 
-        throw std::invalid_argument("Voc&ecirc; deve informar um m&ecirc;s v&aacute;lido");
     if (dia < 1 && dia > 31)
-
-        throw std::invalid_argument("Voc&ecirc; deve informar um dia v&aacute;lido");
+        throw std::invalid_argument("Informe uma data valida");
 
     if (mes == 2)
     {
         if (ehAnoBissexto(ano))
         {
             if (!(dia <= 29))
-                throw std::invalid_argument("Informe uma data v&aacute;lida");
+                throw std::invalid_argument("Informe uma data valida");
         }
         else if (!(dia <= 28))
-            throw std::invalid_argument("Informe uma data v&aacute;lida");
+            throw std::invalid_argument("Informe uma data valida");
     }
 
-    if ((mes == 4 || mes == 6 ||
-         mes == 9 || mes == 11) &&
-        !(dia <= 30))
-        throw std::invalid_argument("Informe uma data v&aacute;lida");
+    if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && !(dia <= 30))
+        throw std::invalid_argument("Informe uma data valida");
 }
 
 bool Data::ehAnoBissexto(int ano)
@@ -235,7 +205,6 @@ Data::Data(std::string data) : data{data}
 Data::~Data() {}
 
 // Definições de métode de classe Duração.
-
 int Duracao::duracoes[5]{30, 60, 90, 120, 180};
 
 void Duracao::setDuracao(int duracao)
@@ -249,7 +218,7 @@ void Duracao::validar(int duracao)
 
     if (std::find(std::begin(duracoes), std::end(duracoes), duracao) == std::end(duracoes))
     {
-        throw std::invalid_argument("informe um valor válido para duracao");
+        throw std::invalid_argument("Informe uma duracao valida");
     }
 }
 
@@ -263,7 +232,6 @@ Duracao::Duracao(int duracao) : duracao{duracao}
 Duracao::~Duracao() {}
 
 // Definições de métodos da classe Email.
-
 void Email::validar(std::string email)
 {
     std::regex str_expr("^((?!\\.)(?!.*?\\.\\.)(?!.*?\\.\\@)[A-Za-z0-9\\.\\!\\#\\$\\%\\&\'\\*\\+\\-\\/\\=\?\\^\\_\\`\\{\\|\\}\\~]{1,64})@((?!\\.)(?!.*?\\.\\.)[A-Za-z0-9\\.\\-]{1,253})$");
@@ -286,7 +254,6 @@ Email::~Email(){};
 Email::Email(){};
 
 // Definições de métodos da classe Endereco.
-
 void Endereco::validar(std::string endereco)
 {
     std::regex str_expr("^(?:(?!.*[ ]{2})(?!.*[\\.]{2})(?:.{0,20}$))$");
@@ -309,7 +276,6 @@ Endereco::~Endereco(){};
 Endereco::Endereco(){};
 
 // Definições de métodos da classe Descricao.
-
 void Descricao::validar(std::string descricao)
 {
     std::regex str_expr("^(?:(?!.*[ ][ ])(?!.*[\\.][\\.])(?:.{0,30}$))$");
@@ -334,7 +300,6 @@ Descricao::Descricao(std::string descricao) : descricao{descricao}
 Descricao::~Descricao(){};
 
 // Definições de métodos da classe Senha.
-
 void Senha::caractersUnicos(std::string str)
 {
     std::set<char> char_set;
@@ -376,7 +341,6 @@ Senha::~Senha(){};
 Senha::Senha(){};
 
 // Definições de métodos da classe Titulo.
-
 void Titulo::validar(std::string titulo)
 {
     std::regex str_expr("^(?:(?!.*[ ]{2})(?!.*[\\.]{2})(?=^.{5,20}$)(?=.*[A-Z])(?=.*[a-z]).*)$");
@@ -401,7 +365,6 @@ Titulo::Titulo(){};
 Titulo::~Titulo(){};
 
 // Definições de métodos da classe Nome.
-
 void Nome::validar(std::string nome)
 {
 
@@ -427,13 +390,12 @@ Nome::Nome(){};
 Nome::~Nome(){};
 
 // Definições de métodos da classe Horário.
-
 void Horario::validar(std::string horario)
 {
     std::regex str_expr("^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$");
     if (!regex_match(horario, str_expr))
     {
-        throw std::invalid_argument("Informe um horário valido");
+        throw std::invalid_argument("Informe um horario valido");
     }
 };
 
@@ -452,13 +414,12 @@ Horario::Horario(){};
 Horario::~Horario(){};
 
 // Definições de métodos da classe Nota.
-
 int Nota::notas[6]{0, 1, 2, 3, 4, 5};
 void Nota::validar(int nota)
 {
     if (std::find(std::begin(notas), std::end(notas), nota) == std::end(notas))
     {
-        throw std::invalid_argument("Informe uma nota válida");
+        throw std::invalid_argument("Informe uma nota valida");
     }
 };
 
@@ -477,21 +438,29 @@ Nota::Nota(){};
 Nota::~Nota(){};
 
 // Definições de métodos da classe Idioma
-
-std::string Idioma::idiomas[10]{"Ingles", "Chines Mandarim", "Hindi", "Espanhol", "Frances", "Arabe", "Bengali", "Russo", "Portugues", "Indonesio"};
+std::string Idioma::idiomas[10]{
+    "Ingles",
+    "Chines Mandarim",
+    "Hindi",
+    "Espanhol",
+    "Frances",
+    "Arabe",
+    "Bengali",
+    "Russo",
+    "Portugues",
+    "Indonesio"};
 
 void Idioma::validar(std::string idioma)
 {
     if (std::find(std::begin(idiomas), std::end(idiomas), idioma) == std::end(idiomas))
     {
-        throw std::invalid_argument("Argumento Invalido");
+        throw std::invalid_argument("Informe um idioma valido");
     }
 }
 
-Idioma::Idioma(std::string idioma)
+Idioma::Idioma(std::string idioma) : idioma{idioma}
 {
     validar(idioma);
-    this->idioma = idioma;
 }
 
 void Idioma::setIdioma(std::string idioma)

@@ -351,27 +351,27 @@ void TUSessao::tearDown()
 void TUSessao::testarCenarioSucesso()
 {
   Codigo codigo;
-  codigo.setCodigo(VALOR_VALIDO_CODIGO);
+  codigo.setCodigo(CODIGO_VALIDO);
   sessao->setCodigo(codigo);
-  if (sessao->getCodigo().getCodigo() != VALOR_VALIDO_CODIGO)
+  if (sessao->getCodigo().getCodigo() != CODIGO_VALIDO)
     estado = FALHA;
 
   Data data;
-  data.setData(VALOR_VALIDO_DATA);
+  data.setData(DATA_VALIDA);
   sessao->setData(data);
-  if (sessao->getData().getData() != VALOR_VALIDO_DATA)
+  if (sessao->getData().getData() != DATA_VALIDA)
     estado = FALHA;
 
   Horario horario;
-  horario.setHorario(VALOR_VALIDO_HORARIO);
+  horario.setHorario(HORARIO_VALIDO);
   sessao->setHorario(horario);
-  if (sessao->getHorario().getHorario() != VALOR_VALIDO_HORARIO)
+  if (sessao->getHorario().getHorario() != HORARIO_VALIDO)
     estado = FALHA;
 
   Idioma idioma;
-  idioma.setIdioma(VALOR_VALIDO_IDIOMA);
+  idioma.setIdioma(IDIOMA_VALIDO);
   sessao->setIdioma(idioma);
-  if (sessao->getIdioma().getIdioma() != VALOR_VALIDO_IDIOMA)
+  if (sessao->getIdioma().getIdioma() != IDIOMA_VALIDO)
     estado = FALHA;
 
   // Prioridade prioridade;
@@ -381,10 +381,66 @@ void TUSessao::testarCenarioSucesso()
   //   estado = FALHA;
 }
 
+void TUSessao::testarCenarioFalha()
+{
+  try
+  {
+    Codigo codigo;
+    codigo.setCodigo(CODIGO_INVALIDO);
+    sessao->setCodigo(codigo);
+    estado = FALHA;
+  }
+  catch (invalid_argument &excecao)
+  {
+    if (sessao->getCodigo().getCodigo() == CODIGO_INVALIDO)
+      estado = FALHA;
+  }
+
+  try
+  {
+    Data data;
+    data.setData(DATA_INVALIDA);
+    sessao->setData(data);
+    estado = FALHA;
+  }
+  catch (invalid_argument &excecao)
+  {
+    if (sessao->getData().getData() == DATA_INVALIDA)
+      estado = FALHA;
+  }
+
+  try
+  {
+    Horario horario;
+    horario.setHorario(HORARIO_INVALIDO);
+    sessao->setHorario(horario);
+    estado = FALHA;
+  }
+  catch (invalid_argument &excecao)
+  {
+    if (sessao->getHorario().getHorario() == HORARIO_INVALIDO)
+      estado = FALHA;
+  }
+
+  try
+  {
+    Idioma idioma;
+    idioma.setIdioma(IDIOMA_INVALIDO);
+    sessao->setIdioma(idioma);
+    estado = FALHA;
+  }
+  catch (invalid_argument &excecao)
+  {
+    if (sessao->getIdioma().getIdioma() == IDIOMA_INVALIDO)
+      estado = FALHA;
+  }
+}
+
 int TUSessao::run()
 {
   setUp();
   testarCenarioSucesso();
+  testarCenarioFalha();
   tearDown();
   return estado;
 }

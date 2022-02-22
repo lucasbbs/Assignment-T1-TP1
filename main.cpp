@@ -1,17 +1,14 @@
-#include <iostream>
 #include <ctime>
+#include <iostream>
 #include <vector>
+#include <regex>
+
 #include "dominios/dominios.h"
 #include "dominios/testesDominios.h"
 #include "entidades/entidades.h"
 #include "entidades/testesEntidades.h"
-#include <regex>
 
 using namespace std;
-
-vector<Codigo *> Codigo::codigos;
-
-// vector<Usuario *> Usuario::usuarios;
 
 int main()
 {
@@ -280,77 +277,6 @@ int main()
           cout << "FALHA - EXCURSAO" << endl;
           break;
      }
-
-     // string opcao{"0"};
-     // std::regex str_expr("^[1-4]$");
-     // while (!regex_match(opcao, str_expr))
-     // {
-     //      cout << "Voce deve escolher uma das seguintes opcoes: " << endl
-     //           << "1 - Listar excursões disponíveis" << endl
-     //           << "2 - Cadastrar" << endl
-     //           << "3 - Fazer login" << endl
-     //           << "4 - Sair" << endl;
-     //      getline(cin, opcao);
-     // }
-     // if (opcao == "1")
-     // {
-     // }
-     // else if (opcao == "2")
-     // {
-     //      std::string nome_string;
-     //      while (true)
-     //      {
-     //           cout << "Para cadastrar um novo usuário você deve informar:" << endl
-     //                << "nome: ";
-     //           getline(cin, nome_string);
-     //           try
-     //           {
-     //                Nome nome{nome_string};
-     //                break;
-     //           }
-     //           catch (const std::exception &e)
-     //           {
-     //                std::cerr << e.what() << '\n';
-     //           }
-     //      }
-
-     //      std::string email_string{};
-     //      while (true)
-     //      {
-     //           cout << "Para cadastrar um novo usuário você deve informar:" << endl
-     //                << "email: ";
-     //           getline(cin, email_string);
-     //           try
-     //           {
-     //                Email email{email_string};
-     //                break;
-     //           }
-     //           catch (const std::exception &e)
-     //           {
-     //                std::cerr << e.what() << '\n';
-     //           }
-     //      }
-     //      std::string senha_string{};
-     //      while (true)
-     //      {
-
-     //           cout << "Para cadastrar um novo usuário você deve informar:" << endl
-     //                << "senha: ";
-     //           getline(cin, senha_string);
-     //           try
-     //           {
-     //                Senha senha{senha_string};
-     //                break;
-     //           }
-     //           catch (const std::exception &e)
-     //           {
-     //                std::cerr << e.what() << '\n';
-     //           }
-     //      }
-     //      Usuario user{nome_string, email_string, senha_string};
-
-     //      user.getNome();
-     // }
 
      return 0;
 }

@@ -60,7 +60,7 @@ public:
     ///
     Usuario();
     ///
-    /// Inicializa o objeto com o nome, email e senha informados caso os mesmos sejam válidos.
+    /// Inicializa o objeto com o nome, email e senha informados sejam válidos.
     ///
     /// Lança exceção caso algum dos dados informado não seja válido.
     ///
@@ -145,17 +145,18 @@ public:
     ///
     Sessao();
     ///
-    /// Inicializa o objeto com a data, o horario e o idioma informados caso os mesmos sejam válidos.
+    /// Inicializa o objeto com o codigo, a data, o horario e o idioma informados  sejam válidos.
     ///
     /// Lança exceção caso algum dos dados informado não seja válido.
     ///
+    /// @param codigo Codigo
     /// @param data Data
     /// @param horario Horario
     /// @param idioma Idioma
     ///
     /// @throw invalid_argument
     ///
-    Sessao(std::string data, std::string horario, std::string idioma);
+    Sessao(std::string codigo, std::string data, std::string horario, std::string idioma);
     ///
     /// Destrói o objeto instanciado
     ///
@@ -213,16 +214,17 @@ public:
     ///
     Avaliacao();
     ///
-    /// Inicializa o objeto com a nota e a descricao informadas caso as mesmas sejam válidas.
+    /// Inicializa o objeto com o codigo, a nota e a descricao informadas caso as mesmas sejam válidas.
     ///
     /// Lança exceção caso algum dos dados informado não seja válido.
     ///
+    /// @param codigo Codigo
     /// @param nota Nota
     /// @param descricao Descricao
     ///
     /// @throw invalid_argument
     ///
-    Avaliacao(int nota, std::string descricao);
+    Avaliacao(std::string codigo, int nota, std::string descricao);
     ///
     /// Destrói o objeto instanciado
     ///
@@ -339,10 +341,11 @@ public:
     ///
     Excursao();
     ///
-    /// Inicializa o objeto com o titulo, a nota, a cidade, a duracao e a descricao informados caso os mesmos sejam válidos.
+    /// Inicializa o objeto com o codigo, o titulo, a nota, a cidade, a duracao e a descricao informados sejam válidos.
     ///
     /// Lança exceção caso algum dos dados informado não seja válido.
     ///
+    /// @param codigo Codigo
     /// @param titulo Titulo
     /// @param nota Nota
     /// @param cidade Cidade
@@ -351,7 +354,7 @@ public:
     ///
     /// @throw invalid_argument
     ///
-    Excursao(std::string titulo, int nota, std::string cidade, int duracao, std::string descricao);
+    Excursao(std::string codigo, std::string titulo, int nota, std::string cidade, int duracao, std::string descricao);
     ///
     /// Destrói o objeto instanciado
     ///
